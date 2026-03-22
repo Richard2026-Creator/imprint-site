@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cream background circle -->
+  <circle cx="50" cy="50" r="49" fill="#e8e0d4"/>
+  <!-- Gold border ring -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#c9a45a" stroke-width="1.8"/>
+  <!-- Serif I - top serif bar -->
+  <rect x="33" y="22" width="34" height="4.5" fill="#1a1814" rx="0.5"/>
+  <!-- Serif I - vertical stem -->
+  <rect x="45" y="22" width="10" height="48" fill="#1a1814"/>
+  <!-- Serif I - bottom serif bar -->
+  <rect x="33" y="65.5" width="34" height="4.5" fill="#1a1814" rx="0.5"/>
+  <!-- Gold underline -->
+  <rect x="33" y="74" width="34" height="2" fill="#c9a45a" rx="1"/>
+</svg>
