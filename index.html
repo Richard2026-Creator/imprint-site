@@ -1157,7 +1157,6 @@ footer {
     gap: 0.5rem;
   }
   .intel-rej-row span:first-child { font-size: 0.65rem; }
-  .intel-couple-divider { min-width: auto; width: 100%; }
   .intel-stat-block { padding: 2.5rem 1.4rem; }
   .intel-video-wrap { height: 100svh; }
   .intel-close { padding: 4rem 0; }
@@ -1166,6 +1165,63 @@ footer {
 }
 @media (max-width: 768px) {
   .intel-video-caption { font-size: 0.7rem; letter-spacing: 0.16em; padding: 4rem 1.8rem 2rem; }
+
+  /* Partner Comparison — mobile layout */
+  .intel-couple-wrap { padding: 4rem 0; }
+  .intel-couple-intro { margin-bottom: 2.5rem; }
+  .intel-couple-h3 { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.3; }
+  .intel-couple-h3 br { display: none; }
+
+  .intel-couple {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Each partner card */
+  .intel-couple-col {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(245,242,236,0.08);
+  }
+
+  /* Override 900px rule that made divider horizontal */
+  .intel-couple-divider {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9rem;
+    min-width: auto;
+    width: 100%;
+    padding: 2.2rem 0;
+    border-bottom: 1px solid rgba(245,242,236,0.08);
+  }
+
+  /* Restore vertical separator lines */
+  .intel-couple-divider-line {
+    width: 1px;
+    height: 28px;
+  }
+
+  /* Shared tags centred */
+  .intel-couple-shared-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  /* Synthesis quote gets more breathing room */
+  .intel-couple-synthesis {
+    max-width: 300px;
+    font-size: 0.92rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Last col has no bottom border */
+  .intel-couple-col:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 </style>
 </head>
