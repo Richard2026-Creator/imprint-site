@@ -883,6 +883,7 @@ footer {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  height: 100vh;
   border-top: 1px solid rgba(245,242,236,0.08);
   border-bottom: 1px solid rgba(245,242,236,0.08);
   overflow: hidden;
@@ -890,28 +891,29 @@ footer {
 }
 .intel-video {
   width: 100%;
+  height: 100%;
   display: block;
-  max-height: 100vh;
   object-fit: cover;
   object-position: center center;
 }
 .intel-video-caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 1.4rem 2rem;
-  background: linear-gradient(to top, rgba(14,13,11,0.75) 0%, rgba(14,13,11,0.0) 100%);
+  padding: 5rem 2.5rem 2.5rem;
+  background: linear-gradient(to top, rgba(14,13,11,0.88) 0%, rgba(14,13,11,0.55) 50%, rgba(14,13,11,0.0) 100%);
   text-align: center;
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.9);
+  color: rgba(245,242,236,0.92);
   font-weight: 300;
+  line-height: 1.8;
 }
 
 /* Beat 2: Profile */
 .intel-profile-wrap {
   padding: 6rem 0;
-  border-bottom: 1px solid rgba(245,242,236,0.08);
+  border-bottom: 1px solid rgba(245,242,236,0.12);
 }
 .intel-profile-label {
   font-size: 0.65rem; letter-spacing: 0.25em;
@@ -921,12 +923,13 @@ footer {
 .intel-profile {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 4rem; align-items: start;
-  border: 1px solid rgba(245,242,236,0.08);
+  border: 1px solid rgba(245,242,236,0.18);
+  background: rgba(245,242,236,0.04);
   padding: 3rem;
 }
 .intel-profile-studio {
   font-size: 0.6rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(245,242,236,0.3);
+  text-transform: uppercase; color: rgba(245,242,236,0.5);
   margin-bottom: 0.6rem;
 }
 .intel-profile-name {
@@ -936,16 +939,16 @@ footer {
   margin-bottom: 0.3rem;
 }
 .intel-profile-date {
-  font-size: 0.62rem; color: rgba(245,242,236,0.25);
+  font-size: 0.62rem; color: rgba(245,242,236,0.45);
   letter-spacing: 0.1em; margin-bottom: 2rem;
 }
 .intel-profile-primary {
   margin-bottom: 2rem; padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(245,242,236,0.08);
+  border-bottom: 1px solid rgba(245,242,236,0.15);
 }
 .intel-profile-primary-label {
   font-size: 0.6rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(245,242,236,0.25);
+  text-transform: uppercase; color: rgba(245,242,236,0.45);
   margin-bottom: 0.5rem;
 }
 .intel-profile-primary-val {
@@ -955,7 +958,7 @@ footer {
 .intel-profile-scores {
   display: flex; gap: 2rem; margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(245,242,236,0.08);
+  border-bottom: 1px solid rgba(245,242,236,0.15);
 }
 .intel-profile-score {
   display: flex; align-items: center; gap: 0.8rem;
@@ -967,11 +970,11 @@ footer {
 }
 .intel-score-lbl {
   font-size: 0.6rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(245,242,236,0.3);
+  text-transform: uppercase; color: rgba(245,242,236,0.5);
 }
 .intel-influences-label {
   font-size: 0.6rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(245,242,236,0.25);
+  text-transform: uppercase; color: rgba(245,242,236,0.45);
   margin-bottom: 0.8rem;
 }
 .intel-influence-tags {
@@ -979,46 +982,46 @@ footer {
 }
 .intel-influence-tags span {
   font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-  background: rgba(245,242,236,0.06); color: rgba(245,242,236,0.55);
+  background: rgba(245,242,236,0.09); color: rgba(245,242,236,0.7);
   padding: 0.3rem 0.7rem; border-radius: 1px;
 }
 .intel-rejection-label {
   font-size: 0.6rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(245,242,236,0.25);
+  text-transform: uppercase; color: rgba(245,242,236,0.45);
   margin-bottom: 0.4rem;
 }
 .intel-rejection-note {
-  font-size: 0.82rem; color: rgba(245,242,236,0.35);
+  font-size: 0.82rem; color: rgba(245,242,236,0.55);
   margin-bottom: 1.5rem; font-style: italic;
 }
 .intel-rej-bars {
   display: flex; flex-direction: column;
   gap: 0.8rem; margin-bottom: 2.5rem; padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(245,242,236,0.08);
+  border-bottom: 1px solid rgba(245,242,236,0.15);
 }
 .intel-rej-row {
   display: grid; grid-template-columns: 110px 1fr 28px;
   align-items: center; gap: 0.8rem;
 }
 .intel-rej-row span:first-child {
-  font-size: 0.72rem; color: rgba(245,242,236,0.5); font-weight: 300;
+  font-size: 0.72rem; color: rgba(245,242,236,0.7); font-weight: 300;
 }
 .intel-rej-row span:last-child {
-  font-size: 0.62rem; color: rgba(245,242,236,0.25); text-align: right;
+  font-size: 0.62rem; color: rgba(245,242,236,0.45); text-align: right;
 }
 .intel-rej-track {
-  height: 2px; background: rgba(245,242,236,0.06); border-radius: 1px;
+  height: 2px; background: rgba(245,242,236,0.1); border-radius: 1px;
 }
 .intel-rej-fill {
   height: 100%; background: #9b3a2e; border-radius: 1px;
 }
 .intel-narrative-label {
   font-size: 0.6rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(245,242,236,0.25);
+  text-transform: uppercase; color: rgba(245,242,236,0.45);
   margin-bottom: 0.8rem;
 }
 .intel-profile-narrative p {
-  font-size: 0.85rem; color: rgba(245,242,236,0.45);
+  font-size: 0.85rem; color: rgba(245,242,236,0.65);
   line-height: 1.75; font-style: italic; margin-bottom: 2rem;
 }
 .intel-pdf-btn {
@@ -1156,14 +1159,13 @@ footer {
   .intel-rej-row span:first-child { font-size: 0.65rem; }
   .intel-couple-divider { min-width: auto; width: 100%; }
   .intel-stat-block { padding: 2.5rem 1.4rem; }
-  .intel-video { max-height: 40vh; }
+  .intel-video-wrap { height: 100svh; }
   .intel-close { padding: 4rem 0; }
   .intel-influence-tags { gap: 0.3rem; }
   .intel-influence-tags span { font-size: 0.55rem; padding: 0.25rem 0.5rem; }
 }
 @media (max-width: 768px) {
-  .intel-video { max-height: 60vh; }
-  .intel-video-caption { font-size: 0.65rem; letter-spacing: 0.12em; }
+  .intel-video-caption { font-size: 0.7rem; letter-spacing: 0.16em; padding: 4rem 1.8rem 2rem; }
 }
 </style>
 </head>
