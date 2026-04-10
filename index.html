@@ -403,6 +403,7 @@ section { padding: 6rem 0; }
 .pain-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px; background: var(--warmer);
+  align-items: stretch;
 }
 .pain-card {
   background: var(--stone); padding: 2.5rem 2rem;
@@ -410,7 +411,7 @@ section { padding: 6rem 0; }
 }
 .pain-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; white-space: nowrap;
 }
 .pain-badge-style {
   font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -422,7 +423,7 @@ section { padding: 6rem 0; }
   border: 1px solid rgba(192,57,43,0.25); padding: 0.1rem 0.4rem;
 }
 .pain-img {
-  width: 100%; aspect-ratio: 1; object-fit: cover;
+  width: 100%; height: 220px; object-fit: cover; object-position: center;
   margin-bottom: 1.5rem;
   display: block; border-radius: 12px;
 }
@@ -793,6 +794,7 @@ footer {
   .nav-hamburger { display: flex; }
   section { padding: 4rem 0; }
   .pain-grid, .built-grid, .pricing-grid, .usecase-grid { grid-template-columns: 1fr; }
+  .pain-grid { align-items: start; }
   .explainer-stat-block { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1349,7 +1351,7 @@ footer {
       </div>
       <div class="pain-card">
         <div class="pain-badge">
-          <span class="pain-badge-style">Style: Quiet Luxury / Organic Modern</span>
+          <span class="pain-badge-style">Style: Quiet Luxury</span>
           <span style="margin:0 0.4rem;color:var(--soft)">·</span>
           <span class="pain-badge-status" style="color:#2d6a4f;border:1px solid rgba(45,106,79,0.25);">Aligned</span>
         </div>
