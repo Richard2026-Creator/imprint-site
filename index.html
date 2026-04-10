@@ -883,7 +883,6 @@ footer {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  height: 100vh;
   border-top: 1px solid rgba(245,242,236,0.08);
   border-bottom: 1px solid rgba(245,242,236,0.08);
   overflow: hidden;
@@ -891,9 +890,9 @@ footer {
 }
 .intel-video {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 .intel-video-caption {
@@ -1158,7 +1157,6 @@ footer {
   }
   .intel-rej-row span:first-child { font-size: 0.65rem; }
   .intel-stat-block { padding: 2.5rem 1.4rem; }
-  .intel-video-wrap { height: 100svh; }
   .intel-close { padding: 4rem 0; }
   .intel-influence-tags { gap: 0.3rem; }
   .intel-influence-tags span { font-size: 0.55rem; padding: 0.25rem 0.5rem; }
