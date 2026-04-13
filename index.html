@@ -743,7 +743,7 @@ section { padding: 6rem 0; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem;
 }
 .faq-image {
-  width: 100%; border-radius: 12px; object-fit: cover; position: sticky; top: 6rem;
+  width: 100%; border-radius: 12px; object-fit: cover; object-position: center; position: sticky; top: 6rem; min-height: 520px;
 }
 .faq-accordion { display: flex; flex-direction: column; }
 .faq-item {
@@ -809,7 +809,7 @@ footer {
   .method-cards { grid-template-columns: 1fr; }
   .built-grid, .pricing-grid, .usecase-grid { grid-template-columns: 1fr 1fr; }
   .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .faq-image { position: static; max-height: 400px; object-fit: cover; width: 100%; }
+  .faq-image { position: static; min-height: unset; max-height: 400px; object-fit: cover; width: 100%; }
   footer { flex-direction: column; text-align: center; padding: 2rem; }
 }
 @media (max-width: 600px) {
