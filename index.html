@@ -79,6 +79,30 @@ nav {
 }
 .nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
 
+/* My Studio nav link tooltip */
+.nav-mystudio {
+  position: relative;
+}
+.nav-mystudio .nav-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.7rem;
+  background: #0e0d0b;
+  color: #f5f2ec;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.nav-mystudio:hover .nav-tooltip { opacity: 1; }
+@media (max-width: 960px) {
+  .nav-mystudio .nav-tooltip { display: none; }
+}
+
 /* Hamburger */
 .nav-hamburger {
   display: none;
@@ -1242,6 +1266,7 @@ footer {
     <li><a href="#capabilities">Capabilities</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li class="nav-mystudio"><a href="https://imprint-v3.pages.dev" target="_blank">My Studio</a><span class="nav-tooltip">Login or access your account</span></li>
     <li><a href="#pricing" class="nav-cta">Start Free</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
@@ -1255,6 +1280,7 @@ footer {
   <li><a href="#capabilities" onclick="closeDrawer()">Capabilities</a></li>
   <li><a href="#pricing" onclick="closeDrawer()">Pricing</a></li>
   <li><a href="#faq" onclick="closeDrawer()">FAQ</a></li>
+  <li><a href="https://imprint-v3.pages.dev" target="_blank" onclick="closeDrawer()">My Studio</a></li>
   <li><a href="#pricing" class="nav-cta" onclick="closeDrawer()">Start Free</a></li>
 </ul>
 
