@@ -18,6 +18,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.svg" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1267,6 +1268,34 @@ footer {
   }
 }
 </style>
+<style>
+.imp-overlay{display:none;position:fixed;inset:0;background:rgba(18,18,16,0.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:24px;}
+.imp-overlay.open{display:flex;}
+.imp-modal{background:#1E1E1B;border:1px solid rgba(184,154,106,0.28);width:100%;max-width:440px;padding:40px 36px 36px;position:relative;animation:impSlide 0.28s cubic-bezier(0.4,0,0.2,1) both;}
+@keyframes impSlide{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.imp-close{position:absolute;top:16px;right:18px;background:none;border:none;color:#7A7470;font-size:20px;cursor:pointer;line-height:1;transition:color 260ms ease;}
+.imp-close:hover{color:#F5F0E8;}
+.imp-eyebrow{font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#B89A6A;margin-bottom:10px;font-family:'Montserrat',sans-serif;}
+.imp-heading{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;color:#F5F0E8;line-height:1.2;margin-bottom:6px;}
+.imp-sub{font-size:11px;color:#7A7470;line-height:1.6;margin-bottom:28px;font-family:'Montserrat',sans-serif;}
+.imp-field{margin-bottom:18px;}
+.imp-label{display:block;font-size:9px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#7A7470;margin-bottom:7px;font-family:'Montserrat',sans-serif;}
+.imp-input,.imp-textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(245,240,232,0.12);color:#F5F0E8;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;padding:11px 14px;outline:none;transition:border-color 260ms ease;border-radius:0;box-sizing:border-box;-webkit-appearance:none;}
+.imp-input::placeholder,.imp-textarea::placeholder{color:rgba(245,240,232,0.25);}
+.imp-input:focus,.imp-textarea:focus{border-color:rgba(184,154,106,0.55);}
+.imp-textarea{resize:vertical;min-height:96px;line-height:1.6;}
+.imp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.imp-submit{width:100%;margin-top:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;background:#B89A6A;color:#1A1A18;border:none;padding:15px;cursor:pointer;transition:background 260ms ease,transform 260ms ease;}
+.imp-submit:hover{background:#D4B896;transform:translateY(-1px);}
+.imp-submit:active{transform:translateY(0);}
+.imp-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.imp-notice{font-size:10px;color:#7A7470;text-align:center;margin-top:14px;letter-spacing:0.04em;font-family:'Montserrat',sans-serif;}
+.imp-error{font-size:10px;color:#D4826A;text-align:center;margin-top:12px;display:none;font-family:'Montserrat',sans-serif;}
+.imp-success{display:none;text-align:center;padding:20px 0 8px;}
+.imp-success-icon{width:40px;height:40px;border:1px solid #B89A6A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:#B89A6A;font-size:18px;}
+.imp-success h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:24px;color:#F5F0E8;margin-bottom:8px;}
+.imp-success p{font-size:11px;color:#7A7470;line-height:1.7;font-family:'Montserrat',sans-serif;}
+</style>
 </head>
 <body>
 
@@ -1866,7 +1895,7 @@ footer {
           <li>Studio-wide analytics</li>
           <li>Custom integrations</li>
         </ul>
-        <a href="#pricing" class="btn-ink">Request Access</a>
+        <a href="#" class="btn-ink" onclick="openModal('enterprise'); return false;">Request Access</a>
       </div>
     </div>
     <p class="pricing-note">7-day free trial · Full access from day one</p>
@@ -1939,7 +1968,7 @@ footer {
     <a href="#">About</a>
     <a href="#">Privacy Policy</a>
     <a href="#">Terms of Service</a>
-    <a href="#">Contact</a>
+    <a href="#" onclick="openModal('contact'); return false;">Contact</a>
   </div>
   <span class="footer-copy">© 2026 IMPRINT. Aesthetic intelligence for design studios.</span>
 </footer>
@@ -1998,6 +2027,146 @@ const capObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.2 });
 document.querySelectorAll('.cap-visual').forEach(el => capObserver.observe(el));
+</script>
+
+<div class="imp-overlay" id="impOverlay">
+  <div class="imp-modal" id="impModal">
+    <button class="imp-close" onclick="closeModal()" aria-label="Close">&times;</button>
+
+    <div id="impForm">
+      <p class="imp-eyebrow" id="impEyebrow">Get in touch</p>
+      <h2 class="imp-heading" id="impHeading">Let's talk.</h2>
+      <p class="imp-sub" id="impSub">Send us a message and we'll get back to you within one business day.</p>
+
+      <div class="imp-row">
+        <div class="imp-field">
+          <label class="imp-label" for="impName">Name</label>
+          <input class="imp-input" id="impName" type="text" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="imp-field">
+          <label class="imp-label" for="impCompany">Company</label>
+          <input class="imp-input" id="impCompany" type="text" placeholder="Organisation">
+        </div>
+      </div>
+
+      <div class="imp-field">
+        <label class="imp-label" for="impEmail">Email</label>
+        <input class="imp-input" id="impEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      </div>
+
+      <div class="imp-field" id="impRoleField" style="display:none">
+        <label class="imp-label" for="impRole">Your role</label>
+        <input class="imp-input" id="impRole" type="text" placeholder="e.g. Head of Product">
+      </div>
+
+      <div class="imp-field">
+        <label class="imp-label" for="impMessage">Message</label>
+        <textarea class="imp-textarea" id="impMessage" placeholder="Tell us what you're working on..."></textarea>
+      </div>
+
+      <button class="imp-submit" id="impSubmit" onclick="handleSubmit()">Send Message</button>
+      <p class="imp-error" id="impError">Something went wrong. Please try again or email us directly at hello@useimprint.design</p>
+      <p class="imp-notice">We'll reply to hello@useimprint.design</p>
+    </div>
+
+    <div class="imp-success" id="impSuccess">
+      <div class="imp-success-icon">&#10003;</div>
+      <h3>Message sent.</h3>
+      <p>Thank you for reaching out. We'll be in touch<br>within one business day.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var modalType = 'contact';
+var FORMSPREE = 'https://formspree.io/f/meevakoz';
+
+function openModal(type) {
+  modalType = type;
+  document.getElementById('impSuccess').style.display = 'none';
+  document.getElementById('impForm').style.display = 'block';
+  document.getElementById('impError').style.display = 'none';
+  document.getElementById('impSubmit').disabled = false;
+  document.getElementById('impSubmit').textContent = 'Send Message';
+
+  if (type === 'enterprise') {
+    document.getElementById('impEyebrow').textContent = 'Enterprise';
+    document.getElementById('impHeading').textContent = 'Request access.';
+    document.getElementById('impSub').textContent = "Tell us about your team and we'll be in touch to discuss an Enterprise plan.";
+    document.getElementById('impRoleField').style.display = 'block';
+  } else {
+    document.getElementById('impEyebrow').textContent = 'Get in touch';
+    document.getElementById('impHeading').textContent = "Let's talk.";
+    document.getElementById('impSub').textContent = "Send us a message and we'll get back to you within one business day.";
+    document.getElementById('impRoleField').style.display = 'none';
+  }
+
+  document.getElementById('impOverlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('impOverlay').classList.remove('open');
+  ['impName','impEmail','impCompany','impRole','impMessage'].forEach(function(id) {
+    var el = document.getElementById(id);
+    el.value = '';
+    el.style.borderColor = '';
+  });
+}
+
+async function handleSubmit() {
+  var name    = document.getElementById('impName').value.trim();
+  var email   = document.getElementById('impEmail').value.trim();
+  var company = document.getElementById('impCompany').value.trim();
+  var role    = document.getElementById('impRole').value.trim();
+  var message = document.getElementById('impMessage').value.trim();
+
+  var valid = true;
+  [['impName', name], ['impEmail', email], ['impMessage', message]].forEach(function(pair) {
+    var el = document.getElementById(pair[0]);
+    if (!pair[1]) { el.style.borderColor = 'rgba(184,154,106,0.7)'; valid = false; }
+    else { el.style.borderColor = ''; }
+  });
+  if (!valid) return;
+
+  var btn = document.getElementById('impSubmit');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  document.getElementById('impError').style.display = 'none';
+
+  try {
+    var payload = {
+      name: name,
+      email: email,
+      company: company,
+      message: message,
+      _subject: modalType === 'enterprise'
+        ? 'Enterprise Access Request — IMPRINT'
+        : 'Contact Enquiry — IMPRINT'
+    };
+    if (modalType === 'enterprise' && role) payload.role = role;
+
+    var res = await fetch(FORMSPREE, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      document.getElementById('impForm').style.display = 'none';
+      document.getElementById('impSuccess').style.display = 'block';
+    } else {
+      throw new Error('Non-OK response');
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+    document.getElementById('impError').style.display = 'block';
+  }
+}
+
+document.getElementById('impOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
 </script>
 
 </body>
