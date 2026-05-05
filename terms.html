@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – IMPRINT</title>
+  <meta name="description" content="Terms of Service for IMPRINT, the interior design preference intelligence platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black:     #0a0a0a;
+      --off-black: #111111;
+      --surface:   #161616;
+      --border:    rgba(255,255,255,0.08);
+      --gold:      #c9a96e;
+      --gold-dim:  rgba(201,169,110,0.18);
+      --white:     #f5f3ef;
+      --muted:     rgba(245,243,239,0.45);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* — HEADER ————————————————————————————————— */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--gold); }
+
+    header nav a {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    header nav a:hover { color: var(--gold); }
+
+    /* — HERO BAND —————————————————————————————— */
+    .hero-band {
+      padding: 80px 48px 56px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(201,169,110,0.04) 0%, transparent 100%);
+      animation: fadeDown 0.7s ease both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero-band h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+
+    .hero-band h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 28px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* — LAYOUT ————————————————————————————————— */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    /* — SIDEBAR / TOC —————————————————————————— */
+    .toc {
+      position: sticky;
+      top: 88px;
+      padding: 56px 32px 56px 0;
+      border-right: 1px solid var(--border);
+      animation: fadeIn 0.8s ease 0.2s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .toc-title {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 8px;
+    }
+
+    .toc ol li a {
+      display: flex;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      line-height: 1.5;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-family: var(--serif);
+      font-size: 10px;
+      color: var(--gold);
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+
+    .toc ol li a:hover { color: var(--white); }
+
+    /* — CONTENT ——————————————————————————————— */
+    .content {
+      padding: 56px 0 80px 56px;
+      animation: fadeIn 0.8s ease 0.3s both;
+    }
+
+    /* Intro block */
+    .intro-block {
+      padding: 28px 32px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-left: 3px solid var(--gold);
+      margin-bottom: 56px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .intro-block strong { color: var(--white); font-weight: 500; }
+
+    /* Sections */
+    .policy-section {
+      margin-bottom: 56px;
+      padding-top: 8px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+
+    .policy-section h2 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .policy-section p {
+      color: rgba(245,243,239,0.75);
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    /* Lists */
+    .policy-section ul {
+      list-style: none;
+      margin: 12px 0 20px;
+    }
+
+    .policy-section ul li {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(245,243,239,0.72);
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+
+    .policy-section ul li::before {
+      content: '—';
+      color: var(--gold);
+      flex-shrink: 0;
+      font-family: var(--serif);
+    }
+
+    /* Warning card */
+    .warning-card {
+      padding: 20px 24px;
+      border: 1px solid var(--gold-dim);
+      background: rgba(201,169,110,0.04);
+      margin: 24px 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .warning-card strong {
+      color: var(--gold);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Contact block */
+    .contact-block {
+      margin-top: 56px;
+      padding: 40px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--surface) 0%, rgba(201,169,110,0.04) 100%);
+      text-align: center;
+    }
+
+    .contact-block .label { display: block; margin-bottom: 12px; }
+
+    .contact-block h2 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .contact-block p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-block a.email-link {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-block a.email-link:hover { border-color: var(--gold); }
+
+    /* — FOOTER ————————————————————————————————— */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    footer .footer-logo {
+      font-family: var(--serif);
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,243,239,0.3);
+    }
+
+    /* — RESPONSIVE ————————————————————————————— */
+    @media (max-width: 768px) {
+      header { padding: 0 24px; }
+      .hero-band { padding: 56px 24px 40px; }
+      .meta-row { flex-direction: column; gap: 8px; }
+      .page-wrap { padding: 0 24px; }
+      .two-col { grid-template-columns: 1fr; }
+      .toc {
+        position: static;
+        padding: 32px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .content { padding: 40px 0 60px; }
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a class="logo" href="/"><img src="data:image/png;base64,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" alt="IMPRINT" style="height:28px;display:block;"></a>
+    <nav>
+      <a href="/">← Back to site</a>
+    </nav>
+  </header>
+
+  <!-- HERO BAND -->
+  <div class="hero-band">
+    <div class="page-wrap">
+      <span class="label">Legal</span>
+      <h1>Terms of <em>Service</em></h1>
+      <div class="meta-row">
+        <span>Last updated: May 2026</span>
+        <span>IMPRINT &mdash; useimprint.design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="page-wrap">
+    <div class="two-col">
+
+      <!-- TOC -->
+      <aside class="toc" aria-label="Table of contents">
+        <p class="toc-title">Contents</p>
+        <ol>
+          <li><a href="#s1">About IMPRINT</a></li>
+          <li><a href="#s2">Who May Use IMPRINT</a></li>
+          <li><a href="#s3">Studio Accounts</a></li>
+          <li><a href="#s4">Subscriptions &amp; Billing</a></li>
+          <li><a href="#s5">Free Trials</a></li>
+          <li><a href="#s6">Cancellation</a></li>
+          <li><a href="#s7">Studio Responsibility</a></li>
+          <li><a href="#s8">Data Protection</a></li>
+          <li><a href="#s8a">Data Processing Addendum</a></li>
+          <li><a href="#s9">User Content</a></li>
+          <li><a href="#s10">Intellectual Property</a></li>
+          <li><a href="#s11">Acceptable Use</a></li>
+          <li><a href="#s12">Availability</a></li>
+          <li><a href="#s13">Third-Party Services</a></li>
+          <li><a href="#s14">No Professional Advice</a></li>
+          <li><a href="#s15">Limitation of Liability</a></li>
+          <li><a href="#s16">Suspension &amp; Termination</a></li>
+          <li><a href="#s17">Data After Cancellation</a></li>
+          <li><a href="#s18">Changes to These Terms</a></li>
+          <li><a href="#s19">Governing Law</a></li>
+          <li><a href="#s20">Contact</a></li>
+        </ol>
+      </aside>
+
+      <!-- CONTENT -->
+      <div class="content">
+
+        <!-- Intro -->
+        <div class="intro-block">
+          These Terms of Service set out the terms on which you may access and use IMPRINT, operated by <strong>Creativise Limited</strong>.<br><br>
+          By creating an account, subscribing to IMPRINT, accessing the platform or using the service, you agree to these Terms. If you do not agree, you should not use IMPRINT.<br><br>
+          Questions? Contact us at <a href="mailto:hello@useimprint.design" style="color:var(--gold);text-decoration:none;">hello@useimprint.design</a>
+        </div>
+
+        <!-- S1 -->
+        <section class="policy-section" id="s1">
+          <div class="section-header">
+            <span class="section-num">01</span>
+            <h2>About IMPRINT</h2>
+          </div>
+          <p>IMPRINT is a digital platform designed to help interior design studios understand client aesthetic preferences through a guided visual selection experience.</p>
+          <p>The platform may include features such as:</p>
+          <ul>
+            <li>Client preference sessions</li>
+            <li>Visual selection tools</li>
+            <li>Studio dashboards</li>
+            <li>Client result summaries</li>
+            <li>Downloadable reports</li>
+            <li>Image libraries and style tagging</li>
+            <li>Usage and preference insights</li>
+          </ul>
+          <p>IMPRINT is a software tool. It supports the design discovery process, but it does not replace professional judgement, client consultation or the studio's own design expertise.</p>
+        </section>
+
+        <!-- S2 -->
+        <section class="policy-section" id="s2">
+          <div class="section-header">
+            <span class="section-num">02</span>
+            <h2>Who may use IMPRINT</h2>
+          </div>
+          <p>IMPRINT is intended for use by professional studios, designers, consultants, businesses and their invited clients.</p>
+          <p>By using IMPRINT, you confirm that:</p>
+          <ul>
+            <li>You have authority to use the platform on behalf of your studio or business</li>
+            <li>The information you provide is accurate</li>
+            <li>You will use the platform lawfully and responsibly</li>
+            <li>You will not use IMPRINT in a way that harms the platform, other users or third parties</li>
+          </ul>
+          <p>You are responsible for all activity under your account.</p>
+        </section>
+
+        <!-- S3 -->
+        <section class="policy-section" id="s3">
+          <div class="section-header">
+            <span class="section-num">03</span>
+            <h2>Studio accounts</h2>
+          </div>
+          <p>To use certain parts of IMPRINT, you may need to create an account. You are responsible for:</p>
+          <ul>
+            <li>Keeping your login details secure</li>
+            <li>Ensuring account information is accurate and up to date</li>
+            <li>Controlling who within your studio has access</li>
+            <li>Any client data, images or content uploaded or collected through your account</li>
+          </ul>
+          <p>You must notify us promptly if you believe your account has been accessed without permission.</p>
+        </section>
+
+        <!-- S4 -->
+        <section class="policy-section" id="s4">
+          <div class="section-header">
+            <span class="section-num">04</span>
+            <h2>Subscriptions and billing</h2>
+          </div>
+          <p>IMPRINT is provided on a subscription basis unless otherwise agreed in writing. Subscription fees, billing periods and available plans are shown at the point of purchase.</p>
+          <p>Payments are processed through our payment provider, Stripe. We do not store full payment card details ourselves. By subscribing, you authorise our payment provider to charge the applicable subscription fees according to your selected plan.</p>
+          <p>Unless stated otherwise:</p>
+          <ul>
+            <li>Monthly subscriptions renew each month</li>
+            <li>Annual subscriptions renew each year</li>
+            <li>Subscription fees are charged in advance</li>
+            <li>Access may be restricted if payment fails</li>
+          </ul>
+        </section>
+
+        <!-- S5 -->
+        <section class="policy-section" id="s5">
+          <div class="section-header">
+            <span class="section-num">05</span>
+            <h2>Free trials and promotional offers</h2>
+          </div>
+          <p>We may offer free trials, promotional pricing or discount codes from time to time. Unless otherwise stated, once a free trial ends, the subscription will continue as a paid subscription using the payment details provided.</p>
+          <p>We may withdraw, change or limit promotional offers at our discretion.</p>
+        </section>
+
+        <!-- S6 -->
+        <section class="policy-section" id="s6">
+          <div class="section-header">
+            <span class="section-num">06</span>
+            <h2>Cancelling or changing your subscription</h2>
+          </div>
+          <p>You may cancel or manage your subscription through the subscription management option in the platform, or through the payment provider's customer portal where available.</p>
+          <p>Cancellation will usually take effect at the end of the current billing period unless stated otherwise. We do not guarantee refunds for unused time, partial months or unused features unless required by law or expressly agreed in writing.</p>
+        </section>
+
+        <!-- S7 -->
+        <section class="policy-section" id="s7">
+          <div class="section-header">
+            <span class="section-num">07</span>
+            <h2>Studio responsibility for client use</h2>
+          </div>
+          <p>Studios are responsible for how they use IMPRINT with their own clients. This includes responsibility for:</p>
+          <ul>
+            <li>Explaining to clients how IMPRINT will be used</li>
+            <li>Ensuring clients understand what information is being collected</li>
+            <li>Having the appropriate lawful basis, consent or permission where required</li>
+            <li>Reviewing and interpreting client results appropriately</li>
+            <li>Using client insights professionally and responsibly</li>
+          </ul>
+          <p>IMPRINT provides the platform, but the studio remains responsible for the client relationship and any design, commercial or advisory decisions made using the results.</p>
+        </section>
+
+        <!-- S8 -->
+        <section class="policy-section" id="s8">
+          <div class="section-header">
+            <span class="section-num">08</span>
+            <h2>Data protection</h2>
+          </div>
+          <p>Our handling of personal information is explained in our <a href="/privacy-policy.html" style="color:var(--gold);text-decoration:none;">Privacy Policy</a>.</p>
+          <p>Where IMPRINT processes client data on behalf of a studio, the studio is generally the data controller and IMPRINT acts as data processor. Studios must comply with applicable data protection laws when using IMPRINT, including where they collect, upload, review or store client information through the platform. Studios must not upload or collect information through IMPRINT unless they have the right to do so.</p>
+          <p>Where a studio uses IMPRINT to process client data, the <a href="#s8a" style="color:var(--gold);text-decoration:none;">Data Processing Addendum in Section 8A</a> applies.</p>
+        </section>
+
+        <!-- S8A -->
+        <section class="policy-section" id="s8a">
+          <div class="section-header">
+            <span class="section-num">8A</span>
+            <h2>Data Processing Addendum</h2>
+          </div>
+          <p>Where a studio uses IMPRINT to collect, upload, store, review or otherwise process personal information relating to its own clients, the studio acts as the data controller and IMPRINT acts as the data processor.</p>
+          <p>By using IMPRINT for client data, the studio agrees that this section forms part of these Terms and acts as the data processing agreement between the studio and Creativise Limited.</p>
+          <p>IMPRINT will process studio client data only:</p>
+          <ul>
+            <li>To provide and operate the IMPRINT platform</li>
+            <li>In accordance with the studio's use of the platform</li>
+            <li>In accordance with these Terms and our Privacy Policy</li>
+            <li>As required by applicable law</li>
+          </ul>
+          <p>IMPRINT will not use studio client data for its own independent marketing, profiling or unrelated commercial purposes.</p>
+          <p>The studio remains responsible for:</p>
+          <ul>
+            <li>Informing its clients how their data will be used</li>
+            <li>Ensuring it has a lawful basis for collecting and using client data</li>
+            <li>Handling client rights requests, including access, correction or deletion requests</li>
+            <li>Ensuring the information it uploads or collects through IMPRINT is lawful and appropriate</li>
+          </ul>
+          <p>IMPRINT will take reasonable technical and organisational measures to protect studio client data against unauthorised access, loss, misuse, alteration or disclosure.</p>
+          <p>IMPRINT may use trusted service providers, known as sub-processors, to help provide the platform. These may include hosting, database, authentication, payment, analytics, email or infrastructure providers. Current examples may include Supabase, Cloudflare and Stripe, where relevant to the service. Where we use sub-processors, we will take reasonable steps to ensure they are subject to appropriate data protection obligations.</p>
+          <p>If IMPRINT becomes aware of a personal data breach affecting studio client data, we will notify the relevant studio without undue delay where required by applicable law.</p>
+          <p>Where reasonably possible, IMPRINT will assist studios with data protection requests relating to client data processed through the platform.</p>
+          <p>When a studio account is cancelled or terminated, studio client data may be retained, deleted or exported in accordance with our data retention practices, product settings and applicable law.</p>
+        </section>
+
+        <!-- S9 -->
+        <section class="policy-section" id="s9">
+          <div class="section-header">
+            <span class="section-num">09</span>
+            <h2>User content and uploaded material</h2>
+          </div>
+          <p>Studios may upload or use content within IMPRINT, such as images, logos, client information, style tags or written notes. You confirm that you have the necessary rights, licences and permissions to upload and use that content.</p>
+          <p>You must not upload content that:</p>
+          <ul>
+            <li>Infringes someone else's intellectual property rights</li>
+            <li>Is unlawful, misleading or harmful</li>
+            <li>Contains sensitive personal information unless properly authorised</li>
+            <li>Contains malware or harmful code</li>
+            <li>Breaches any confidentiality obligation</li>
+          </ul>
+          <p>You remain responsible for the content you upload.</p>
+        </section>
+
+        <!-- S10 -->
+        <section class="policy-section" id="s10">
+          <div class="section-header">
+            <span class="section-num">10</span>
+            <h2>Intellectual property</h2>
+          </div>
+          <p>IMPRINT, including its design, software, branding, interface, features, content structure and underlying technology, belongs to Creativise Limited or its licensors. You may use IMPRINT only as permitted under these Terms.</p>
+          <p>You must not:</p>
+          <ul>
+            <li>Copy, reproduce or resell the platform</li>
+            <li>Reverse engineer or attempt to extract the source code</li>
+            <li>Create a competing product using IMPRINT's structure, design or functionality</li>
+            <li>Remove branding, notices or ownership information</li>
+            <li>Use IMPRINT in a way that infringes our rights</li>
+          </ul>
+          <p>You retain ownership of your own studio content, such as your logo, uploaded images and client information. By uploading content to IMPRINT, you grant us the limited right to host, process and display that content solely as needed to provide the service.</p>
+        </section>
+
+        <!-- S11 -->
+        <section class="policy-section" id="s11">
+          <div class="section-header">
+            <span class="section-num">11</span>
+            <h2>Acceptable use</h2>
+          </div>
+          <p>You must not use IMPRINT to:</p>
+          <ul>
+            <li>Break any law or regulation</li>
+            <li>Violate data protection or privacy rights</li>
+            <li>Upload unlawful, infringing or harmful content</li>
+            <li>Interfere with the security or performance of the platform</li>
+            <li>Attempt to gain unauthorised access to systems or data</li>
+            <li>Scrape, copy or misuse platform content</li>
+            <li>Use the platform to build or train a competing service</li>
+            <li>Misrepresent your relationship with IMPRINT</li>
+          </ul>
+          <p>We may suspend or restrict access if we believe these Terms have been breached.</p>
+        </section>
+
+        <!-- S12 -->
+        <section class="policy-section" id="s12">
+          <div class="section-header">
+            <span class="section-num">12</span>
+            <h2>Availability and changes to the platform</h2>
+          </div>
+          <p>We aim to keep IMPRINT available and working reliably, but we do not guarantee uninterrupted access. The platform may occasionally be unavailable due to maintenance, updates, technical issues or third-party service interruptions.</p>
+          <p>We may update, change, improve or remove features from time to time. Where practical, we will try to avoid changes that materially reduce the core functionality of a paid subscription without notice.</p>
+        </section>
+
+        <!-- S13 -->
+        <section class="policy-section" id="s13">
+          <div class="section-header">
+            <span class="section-num">13</span>
+            <h2>Third-party services</h2>
+          </div>
+          <p>IMPRINT may rely on or integrate with third-party services, such as payment providers, hosting providers, database providers, analytics tools or email systems. We are not responsible for failures, outages or changes caused by third-party services outside our reasonable control.</p>
+          <p>Your use of third-party services may also be subject to their own terms and policies.</p>
+        </section>
+
+        <!-- S14 -->
+        <section class="policy-section" id="s14">
+          <div class="section-header">
+            <span class="section-num">14</span>
+            <h2>No professional advice</h2>
+          </div>
+          <p>IMPRINT provides tools and insights to support the design discovery process. The platform does not provide legal, financial, psychological, architectural, design or professional advice. Studios are responsible for how they interpret and apply information generated through IMPRINT.</p>
+        </section>
+
+        <!-- S15 -->
+        <section class="policy-section" id="s15">
+          <div class="section-header">
+            <span class="section-num">15</span>
+            <h2>Limitation of liability</h2>
+          </div>
+          <p>To the fullest extent permitted by law, IMPRINT and Creativise Limited will not be liable for:</p>
+          <ul>
+            <li>Loss of profits or revenue</li>
+            <li>Loss of business opportunity or goodwill</li>
+            <li>Loss of data where appropriate backup or export options were available</li>
+            <li>Indirect or consequential losses</li>
+            <li>Client dissatisfaction, project delay or commercial decisions made using platform outputs</li>
+          </ul>
+          <div class="warning-card">
+            <strong>Liability cap</strong>
+            Our total liability for any claim relating to IMPRINT will not exceed the amount paid by you for the service in the three months before the claim arose.
+          </div>
+          <p>Nothing in these Terms limits liability where it would be unlawful to do so, including liability for fraud or for death or personal injury caused by negligence.</p>
+        </section>
+
+        <!-- S16 -->
+        <section class="policy-section" id="s16">
+          <div class="section-header">
+            <span class="section-num">16</span>
+            <h2>Suspension or termination</h2>
+          </div>
+          <p>We may suspend or terminate access to IMPRINT if:</p>
+          <ul>
+            <li>You breach these Terms</li>
+            <li>Payment fails</li>
+            <li>You misuse the platform</li>
+            <li>We are required to do so by law</li>
+            <li>Continued access creates a security, legal or commercial risk</li>
+          </ul>
+          <p>You may stop using IMPRINT at any time. Termination does not affect any rights or obligations that have already arisen.</p>
+        </section>
+
+        <!-- S17 -->
+        <section class="policy-section" id="s17">
+          <div class="section-header">
+            <span class="section-num">17</span>
+            <h2>Data after cancellation</h2>
+          </div>
+          <p>After cancellation or termination, access to the platform may end at the close of the relevant billing period. We may retain certain account, billing or legal records where required.</p>
+          <p>Studio client data may be deleted, retained or exported according to our data retention practices, product settings and any applicable agreement with the studio. Studios are responsible for exporting or saving any information they need before access ends.</p>
+        </section>
+
+        <!-- S18 -->
+        <section class="policy-section" id="s18">
+          <div class="section-header">
+            <span class="section-num">18</span>
+            <h2>Changes to these Terms</h2>
+          </div>
+          <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date above. If changes are material, we may provide additional notice, such as by email or through the platform.</p>
+          <p>Continued use of IMPRINT after updated Terms take effect means you accept the updated Terms.</p>
+        </section>
+
+        <!-- S19 -->
+        <section class="policy-section" id="s19">
+          <div class="section-header">
+            <span class="section-num">19</span>
+            <h2>Governing law</h2>
+          </div>
+          <p>These Terms are governed by the laws of England and Wales. The courts of England and Wales will have exclusive jurisdiction over any dispute arising from or relating to these Terms, unless applicable law requires otherwise.</p>
+        </section>
+
+        <!-- S20 -->
+        <section class="policy-section" id="s20">
+          <div class="section-header">
+            <span class="section-num">20</span>
+            <h2>Contact</h2>
+          </div>
+          <p>For questions about these Terms, please get in touch.</p>
+          <p style="color:var(--muted);font-size:13px;">Creativise Limited</p>
+        </section>
+
+        <!-- Contact block -->
+        <div class="contact-block">
+          <span class="label">Get in touch</span>
+          <h2>Questions about these Terms?</h2>
+          <p>We aim to respond to all enquiries within 72 hours.</p>
+          <a href="mailto:hello@useimprint.design" class="email-link">hello@useimprint.design</a>
+        </div>
+
+      </div><!-- /content -->
+    </div><!-- /two-col -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Imprint</span>
+    <span>&copy; 2026 IMPRINT. All rights reserved.</span>
+    <div style="display:flex;gap:28px;">
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="mailto:hello@useimprint.design">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
