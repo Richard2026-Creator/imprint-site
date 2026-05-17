@@ -757,8 +757,13 @@ section { padding: 6rem 0; }
 .faq-layout {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem;
 }
+.faq-video-wrap { position: sticky; top: 6rem; }
+.faq-demo-label {
+  font-family: 'Montserrat', sans-serif; font-size: 0.68rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; font-weight: 500;
+}
 .faq-image {
-  width: 100%; border-radius: 12px; object-fit: cover; object-position: center; position: sticky; top: 6rem; max-height: 460px;
+  width: 100%; border-radius: 12px; object-fit: cover; object-position: center; max-height: 460px;
 }
 .faq-accordion { display: flex; flex-direction: column; }
 .faq-item {
@@ -826,7 +831,8 @@ footer {
   .method-cards { grid-template-columns: 1fr; }
   .built-grid, .pricing-grid, .usecase-grid { grid-template-columns: 1fr 1fr; }
   .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .faq-image { position: static; min-height: unset; max-height: 400px; object-fit: cover; width: 100%; }
+  .faq-video-wrap { position: static; }
+  .faq-image { max-height: 400px; }
   footer { flex-direction: column; text-align: center; padding: 2rem; }
 }
 @media (max-width: 600px) {
@@ -1914,7 +1920,12 @@ footer {
       <h2>Your questions, answered.</h2>
     </div>
     <div class="faq-layout">
-      <img class="faq-image" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Desktop-Mobile.png" alt="IMPRINT on desktop and mobile" />
+      <div class="faq-video-wrap">
+        <p class="faq-demo-label">Play Demo</p>
+        <video class="faq-image" controls preload="metadata">
+          <source src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT%20Demo.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="faq-accordion">
         <div class="faq-item">
           <div class="faq-q">What exactly do I get?</div>
@@ -1995,7 +2006,7 @@ footer {
 <footer>
   <img src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT_LOGO%201.svg" alt="IMPRINT" style="height:34px;width:auto;display:block;" />
   <div class="footer-links">
-    <a href="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT%20Quick%20Start%20Guide.pdf" target="_blank">Quick Start Guide</a>
+    <a href="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT%20Quick%20Start%20Guide%20v1.pdf" target="_blank">Quick Start Guide</a>
     <a href="/privacy-policy.html">Privacy Policy</a>
     <a href="/terms.html">Terms of Service</a>
     <a href="#" onclick="openModal('contact'); return false;">Contact</a>
