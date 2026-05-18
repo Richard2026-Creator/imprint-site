@@ -3,6 +3,7 @@
   "short_name": "IMPRINT",
   "description": "Decodes what they can't say.",
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
   "background_color": "#f5f0eb",
   "theme_color": "#c9b99a",
