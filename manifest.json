@@ -1,0 +1,21 @@
+{
+  "name": "IMPRINT",
+  "short_name": "IMPRINT",
+  "description": "Decodes what they can't say.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f0eb",
+  "theme_color": "#c9b99a",
+  "icons": [
+    {
+      "src": "https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Imprint_Favicon%20(1).png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Imprint_Favicon%20(1).png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
