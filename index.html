@@ -38,7 +38,7 @@
   --rule-lt:   rgba(14,13,11,0.06);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -162,9 +162,9 @@ nav {
   min-height: 100vh;
   background: var(--ink);
   display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
+  justify-content: stretch; align-items: stretch;
   text-align: left;
-  padding: 9rem 0 5rem;
+  padding: 0;
   position: relative; overflow: hidden;
 }
 .hero-bg {
@@ -183,26 +183,29 @@ nav {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
-  background: linear-gradient(to right, rgba(14,13,11,0.82) 0%, rgba(14,13,11,0.5) 35%, rgba(14,13,11,0.04) 55%, rgba(14,13,11,0.0) 70%);
+  background: linear-gradient(to right, rgba(14,13,11,0.78) 0%, rgba(14,13,11,0.55) 40%, rgba(14,13,11,0.15) 65%, rgba(14,13,11,0.05) 100%);
   pointer-events: none;
 }
 .hero-inner {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  max-width: 1140px;
+  grid-template-columns: 56fr 44fr;
+  align-items: stretch;
   width: 100%;
-  padding: 0 4rem;
-  gap: 4rem;
+  min-height: 100vh;
+  gap: 0;
 }
 .hero-content {
   text-align: left;
   display: flex; flex-direction: column; align-items: flex-start;
+  justify-content: center;
+  padding: 9rem 4rem 5rem 7vw;
 }
 .hero-right {
   display: flex; align-items: center; justify-content: center;
+  background: rgba(14,13,11,0.75);
+  padding: 9rem 4vw 5rem 4vw;
 }
 .hero-eyebrow {
   font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase;
@@ -210,12 +213,101 @@ nav {
 }
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 5.5vw, 5.2rem);
-  font-weight: 300; line-height: 1.05;
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-weight: 300; line-height: 0.92;
   color: var(--stone);
-  margin: 0 0 0.6rem;
+  margin: 0 0 1.5rem;
 }
-.hero h1 em { font-style: italic; color: var(--gold-lt); }
+.hero h1 em { font-style: normal; color: var(--gold-lt); }
+
+/* Report cards in hero-right */
+.hero-cards {
+  display: flex; flex-direction: column; gap: 1.25rem;
+  width: 100%; max-width: 420px;
+}
+.hero-card {
+  background: rgba(14,13,11,0.82);
+  border: 1px solid rgba(185,154,104,0.25);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  color: var(--stone);
+}
+.hero-card-label {
+  font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.5rem; display: block;
+}
+.hero-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 300; margin-bottom: 1rem;
+  color: var(--stone);
+}
+.hero-card-title span { color: rgba(245,242,236,0.5); font-size: 1rem; }
+.hero-card-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.hero-card-stat-label {
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(245,242,236,0.45); display: block; margin-bottom: 0.15rem;
+}
+.hero-card-stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem; font-weight: 300; line-height: 1;
+  color: var(--stone);
+}
+.hero-card-stat-value.gold { color: var(--gold-lt); }
+.hero-card-stat-sub {
+  font-size: 0.65rem; color: rgba(245,242,236,0.4);
+  display: block; margin-top: 0.2rem;
+}
+.hero-card-divider {
+  border: none; border-top: 1px solid rgba(245,242,236,0.08);
+  margin: 0.85rem 0;
+}
+.hero-card-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 0.4rem;
+}
+.hero-card-row-label {
+  font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(245,242,236,0.45);
+}
+.hero-card-row-pct {
+  font-size: 0.75rem; color: var(--gold-lt); font-weight: 400;
+}
+.hero-card-bar-track {
+  height: 3px; background: rgba(245,242,236,0.08);
+  border-radius: 2px; margin-bottom: 0.6rem; overflow: hidden;
+}
+.hero-card-bar-fill {
+  height: 100%; background: var(--gold);
+  border-radius: 2px;
+}
+.hero-card-compat {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+}
+.hero-card-compat-score {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; font-weight: 300; line-height: 1;
+  color: var(--gold-lt); flex-shrink: 0;
+}
+.hero-card-compat-detail { flex: 1; }
+.hero-card-compat-sub {
+  font-size: 0.6rem; color: rgba(245,242,236,0.4);
+  letter-spacing: 0.08em; margin-top: 0.25rem; display: block;
+}
+.hero-card-tension-label {
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); display: block; margin: 0.75rem 0 0.2rem;
+}
+.hero-card-tension-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic; color: var(--stone);
+}
+.hero-card-tension-note {
+  font-size: 0.65rem; color: rgba(245,242,236,0.45); margin-top: 0.2rem;
+}
+.hero-card-tension-note strong { color: rgba(245,242,236,0.7); font-weight: 500; }
 .hero-h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1rem, 1.8vw, 1.5rem);
@@ -233,121 +325,111 @@ nav {
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: 0 !important;
+    max-height: unset !important;
+    overflow: hidden !important;
     justify-content: flex-start;
     align-items: center;
     padding: 0;
     text-align: center;
   }
   .hero-bg-desktop { display: none !important; }
-  .hero-bg-mobile {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: auto !important;
-    min-width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    object-fit: cover !important;
-    object-position: center 15% !important;
+  .hero-bg-mobile { display: none !important; }
+  .hero-content {
+    background-image: url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/MobileBackground.png') !important;
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-color: var(--ink) !important;
+    background-origin: border-box !important;
+    background-clip: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-  .hero-overlay {
-    background: linear-gradient(to bottom,
-      rgba(14,13,11,0.70) 0%,
-      rgba(14,13,11,0.55) 25%,
-      rgba(14,13,11,0.05) 50%,
-      rgba(14,13,11,0.0) 62%,
-      rgba(14,13,11,0.45) 85%,
-      rgba(14,13,11,0.85) 100%) !important;
-  }
+  .hero-overlay { display: none !important; }
   .hero-inner {
     grid-template-columns: 1fr !important;
-    padding: 0 1.6rem !important;
+    padding: 0 !important;
     gap: 0 !important;
     align-items: flex-start !important;
-    min-height: 100vh !important;
-    padding-top: 8rem !important;
+    min-height: unset !important;
     max-width: 100% !important;
   }
   .hero-content {
     text-align: center !important;
     align-items: center !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding: 7rem 1.8rem 3.5rem !important;
+    width: 100% !important;
   }
-  .hero-right { display: none !important; }
+  .hero-right {
+    display: flex !important;
+    background: rgba(14,13,11,0.92) !important;
+    padding: 2.5rem 1.8rem 3.5rem !important;
+    width: 100% !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .hero-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-card {
+    padding: 1.6rem 1.4rem !important;
+  }
 
-  /* Eyebrow — 0.6x = 9.6px, wide tracking, low weight */
+  /* Eyebrow */
   .hero-eyebrow {
-    font-size: 9.6px !important;
-    letter-spacing: 0.16em !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.22em !important;
     font-weight: 300 !important;
-    margin-bottom: 28px !important;
-    opacity: 1 !important;
+    margin-bottom: 2rem !important;
     color: var(--gold) !important;
   }
 
-  /* Headline — 2.0x = 32px, must dominate */
+  /* Headline */
   .hero h1 {
-    font-size: 32px !important;
-    line-height: 1.12 !important;
+    font-size: 2.75rem !important;
+    line-height: 1.0 !important;
     letter-spacing: -0.01em !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 2rem !important;
     max-width: 100% !important;
   }
 
-  /* Supporting line — prominent, second in hierarchy after headline */
+  /* Tagline */
   .hero-h2 {
-    font-size: 22px !important;
-    line-height: 1.4 !important;
-    letter-spacing: 0.01em !important;
+    font-size: 1.15rem !important;
+    line-height: 1.5 !important;
     max-width: 100% !important;
-    margin-bottom: 22px !important;
+    margin-bottom: 2.8rem !important;
     opacity: 1 !important;
-    color: rgba(245,242,236,0.85) !important;
+    color: rgba(245,242,236,0.7) !important;
     font-style: italic !important;
   }
 
-  /* Body copy — smaller, subordinate to supporting line */
-  .hero-sub {
-    font-size: 15px !important;
-    line-height: 1.55 !important;
-    letter-spacing: 0.02em !important;
-    max-width: 280px !important;
-    margin-bottom: 2.5rem !important;
-    opacity: 1 !important;
-    color: rgba(245,242,236,0.7) !important;
-  }
-
-  /* CTAs — intentional, not crowded */
+  /* CTAs */
   .hero-actions {
     justify-content: center !important;
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
-    gap: 12px !important;
-    margin-bottom: 2.5rem !important;
+    gap: 0.75rem !important;
+    margin-bottom: 0 !important;
   }
   .btn-gold {
     width: 100% !important;
     text-align: center !important;
-    font-size: 15px !important;
-    line-height: 1.25 !important;
-    letter-spacing: 0.13em !important;
-    padding: 1.1rem 2rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.18em !important;
+    padding: 1.15rem 2rem !important;
   }
   .btn-outline {
     width: 100% !important;
     text-align: center !important;
-    font-size: 14px !important;
-    line-height: 1.25 !important;
-    letter-spacing: 0.13em !important;
-    padding: 0.95rem 2rem !important;
-    border-color: rgba(245,242,236,0.18) !important;
-    color: rgba(245,242,236,0.6) !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.18em !important;
+    padding: 1.05rem 2rem !important;
+    border-color: rgba(245,242,236,0.2) !important;
+    color: rgba(245,242,236,0.55) !important;
   }
 }
 .btn-gold {
@@ -438,36 +520,98 @@ section { padding: 6rem 0; }
   color: var(--soft);
 }
 
-/* ─── PAIN CARDS ─── */
-.pain { background: var(--warm); }
-.pain-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: var(--warmer);
-  align-items: stretch;
-  margin-left: -2rem; margin-right: -2rem;
+/* ─── PINTEREST vs IMPRINT COMPARISON ─── */
+.compare { background: var(--warm); }
+.compare-table {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--rule);
 }
-.pain-card {
-  background: var(--stone); padding: 2.5rem 2rem;
-  display: flex; flex-direction: column;
+.compare-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
 }
-.pain-badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  margin-bottom: 1.5rem; white-space: nowrap;
+.compare-col {
+  padding: 1.6rem 1.8rem 1.2rem;
+  text-align: center;
 }
-.pain-badge-style {
-  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--soft); font-weight: 400;
+.compare-col--imprint {
+  background: rgba(185,154,104,0.08);
+  border-radius: 2px 2px 0 0;
 }
-.pain-badge-status {
-  font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: #c0392b; font-weight: 500;
-  border: 1px solid rgba(192,57,43,0.25); padding: 0.1rem 0.4rem;
+.compare-platform {
+  font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+  display: block; font-weight: 500;
 }
-.pain-img {
-  width: 100%; height: 220px; object-fit: cover; object-position: center;
-  margin-bottom: 1.5rem;
-  display: block; border-radius: 12px;
+.compare-col--pinterest .compare-platform { color: var(--mid); }
+.compare-col--imprint .compare-platform { color: var(--gold); }
+.compare-platform-sub {
+  font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--soft); display: block; margin-top: 0.3rem;
 }
+.compare-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  border-top: 1px solid var(--rule);
+}
+.compare-row-label {
+  padding: 1.5rem 1.8rem 1.5rem 0;
+  font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--soft); display: flex; align-items: center;
+}
+.compare-cell {
+  padding: 1.5rem 1.8rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 300; line-height: 1.45;
+  display: flex; align-items: center;
+}
+.compare-cell--pinterest {
+  color: var(--mid); font-style: italic;
+}
+.compare-cell--imprint {
+  color: var(--ink); font-weight: 400;
+  background: rgba(185,154,104,0.06);
+}
+
+@media (max-width: 768px) {
+  .compare-header {
+    display: flex;
+  }
+  .compare-col--label { display: none; }
+  .compare-col--pinterest,
+  .compare-col--imprint { flex: 1; padding: 1rem; }
+
+  .compare-row {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule);
+  }
+  .compare-row-label {
+    flex: 0 0 100%;
+    order: -1;
+    padding: 0.68rem 1rem 0.45rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--soft);
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid rgba(14,13,11,0.1);
+    margin: 0;
+  }
+  .compare-cell--pinterest,
+  .compare-cell--imprint {
+    flex: 1;
+    padding: 0.3rem 1rem 1.1rem;
+    font-size: 0.9rem;
+    display: block;
+  }
+}
+
+/* ─── PAIN CARDS (kept for reference, hidden) ─── */
+.pain-badge-style { display: none; }
+.pain-badge-status { display: none; }
+.pain-img { display: none; }
 
 /* ─── FULL BLEED IMAGE BREAK ─── */
 .img-break {
@@ -829,7 +973,7 @@ footer {
   .cap-block.flip .cap-visual { order: 2; }
   .cap-text { border-right: none !important; border-left: none !important; border-bottom: 1px solid var(--rule); }
   .cap-visual { min-height: 320px; }
-  .pain-grid { grid-template-columns: 1fr 1fr; margin-left: 0; margin-right: 0; }
+  .pain-grid { grid-template-columns: 1fr 1fr; }
   .method-cards { grid-template-columns: 1fr; }
   .built-grid, .pricing-grid, .usecase-grid { grid-template-columns: 1fr 1fr; }
   .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -843,7 +987,7 @@ footer {
   .nav-hamburger { display: flex; }
   section { padding: 4rem 0; }
   .pain-grid, .built-grid, .pricing-grid, .usecase-grid { grid-template-columns: 1fr; }
-  .pain-grid { align-items: start; margin-left: 0; margin-right: 0; }
+  .pain-grid { align-items: start; }
   .explainer-stat-block { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1217,7 +1361,7 @@ footer {
 }
 @media (max-width: 768px) {
   .intel-video-desktop { display: none; }
-  .intel-video-wrap { height: auto; overflow: visible; }
+  .intel-video-wrap { height: auto; overflow: visible; width: 100% !important; left: auto !important; right: auto !important; margin-left: 0 !important; margin-right: 0 !important; }
   .intel-video-mobile { display: block; width: 100%; height: 72vw; object-fit: cover; object-position: center; }
   .intel-video-caption { position: static; background: none; padding: 1.2rem 1.8rem; font-size: 0.7rem; letter-spacing: 0.16em; color: rgba(245,242,236,0.7); }
   .intel-stat-block:last-child { padding-bottom: 1.4rem; }
@@ -1362,12 +1506,8 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-bg hero-bg-desktop" autoplay muted loop playsinline>
-    <source src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/HighResVid.mp4" type="video/mp4">
-  </video>
-  <video class="hero-bg hero-bg-mobile" autoplay muted loop playsinline>
-    <source src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT_Mobile%202.mp4" type="video/mp4">
-  </video>
+  <img class="hero-bg hero-bg-desktop" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT_Background.png" alt="" aria-hidden="true">
+  <img class="hero-bg hero-bg-mobile" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT_Background.png" alt="" aria-hidden="true">
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-content">
@@ -1376,16 +1516,69 @@ footer {
         <h1>Interior Design Client Questionnaire</h1>
         <p>Capture your client's full aesthetic vision and remove guesswork from every interior design brief.</p>
       </span>
-      <h1><em>"I'll know when I see it"</em></h1>
-      <p class="hero-h2">The most expensive words in interior design.</p>
-      <p class="hero-sub">Send a swipe deck. Receive their aesthetic DNA. Walk in already aligned.</p>
+      <h1>She said cosy.<br>He said classic.<br><em>You said yes to both.</em></h1>
+      <p class="hero-h2">IMPRINT finds the brief they couldn't give you.</p>
       <div class="hero-actions">
         <a href="#cta" class="btn-gold">Start Free Trial</a>
         <a href="#how" class="btn-outline">See How It Works</a>
       </div>
     </div>
     <div class="hero-right">
-      <!-- Phone mockups or app screenshot sit here -->
+      <div class="hero-cards">
+        <!-- Individual Profile Card -->
+        <div class="hero-card">
+          <span class="hero-card-label">Aesthetic Intelligence Report</span>
+          <div class="hero-card-title">Sarah Whitmore <span>| Individual Profile</span></div>
+          <div class="hero-card-stats">
+            <div>
+              <span class="hero-card-stat-label">Decisiveness</span>
+              <span class="hero-card-stat-value">72<span style="font-size:1rem">%</span></span>
+              <span class="hero-card-stat-sub">1.4+ avg response</span>
+            </div>
+            <div>
+              <span class="hero-card-stat-label">Consistency</span>
+              <span class="hero-card-stat-value gold">25<span style="font-size:1rem">%</span></span>
+              <span class="hero-card-stat-sub">Broad aesthetic range</span>
+            </div>
+          </div>
+          <hr class="hero-card-divider">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,236,0.45);margin-bottom:0.6rem;">Style, Weighting</div>
+          <div class="hero-card-row"><span class="hero-card-row-label">Warm &amp; Cosy</span><span class="hero-card-row-pct">38%</span></div>
+          <div class="hero-card-bar-track"><div class="hero-card-bar-fill" style="width:38%"></div></div>
+          <div class="hero-card-row"><span class="hero-card-row-label">Colourful &amp; Characterful</span><span class="hero-card-row-pct">38%</span></div>
+          <div class="hero-card-bar-track"><div class="hero-card-bar-fill" style="width:38%"></div></div>
+          <div class="hero-card-row"><span class="hero-card-row-label">Class &amp; Elegant</span><span class="hero-card-row-pct">13%</span></div>
+          <div class="hero-card-bar-track"><div class="hero-card-bar-fill" style="width:13%"></div></div>
+          <div class="hero-card-row"><span class="hero-card-row-label">Clean &amp; Modern</span><span class="hero-card-row-pct">11%</span></div>
+          <div class="hero-card-bar-track"><div class="hero-card-bar-fill" style="width:11%"></div></div>
+          <hr class="hero-card-divider">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-style:italic;color:rgba(245,242,236,0.5);line-height:1.5;">"Selections made with deliberate care and evolving curiosity."</div>
+        </div>
+        <!-- Partner Compatibility Card -->
+        <div class="hero-card">
+          <span class="hero-card-label">Partner Compatibility Report</span>
+          <div class="hero-card-title">Sarah &amp; James Whitmore</div>
+          <div class="hero-card-compat">
+            <div>
+              <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,236,0.45);margin-bottom:0.3rem;">Compatibility</div>
+              <div class="hero-card-compat-score">68<span style="font-size:1.4rem">%</span></div>
+              <div style="font-size:0.7rem;color:rgba(245,242,236,0.5);line-height:1.5;margin-top:0.4rem;">One fault line.<br>Entirely manageable.<br><strong style="color:rgba(245,242,236,0.75);font-weight:500;">Once you can see it.</strong></div>
+            </div>
+            <div class="hero-card-compat-detail">
+              <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,236,0.45);margin-bottom:0.3rem;">Shared Foundation</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;color:var(--stone);line-height:1.4;">Warm &amp; Cosy<br>Colourful &amp; Characterful</div>
+              <span class="hero-card-compat-sub">Build here. Move quickly.</span>
+              <span class="hero-card-tension-label">Tension Point</span>
+              <div class="hero-card-tension-value">Classic &amp; Elegant</div>
+              <div class="hero-card-tension-note">He is drawn to it. She isn't.<br><strong>Raise this before the brief.</strong></div>
+            </div>
+          </div>
+          <hr class="hero-card-divider">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,236,0.45);margin-bottom:0.4rem;">Shared Rejections</div>
+          <div style="font-size:0.68rem;color:rgba(245,242,236,0.4);margin-bottom:0.3rem;">Rustic &amp; Relieved &middot; Clean &amp; Modern &middot; Calm &amp; Natural</div>
+          <div style="font-size:0.68rem;color:rgba(245,242,236,0.65);font-weight:500;">Hard constraints. Remove from first creative direction.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1422,53 +1615,48 @@ footer {
 </div>
 
 <!-- PAIN CARDS -->
-<section class="pain reveal" id="how">
+<section class="compare reveal" id="how">
   <div class="container">
     <div class="section-header">
-      <span class="label">You've Lived This</span>
-      <h2>The moments before IMPRINT.</h2>
-      <p>Every designer has been here. The silence. The shrug. The moment you realise you're solving the wrong problem. You've lived the first three. IMPRINT is the fourth.</p>
+      <span class="label">The Alternative</span>
+      <h2>Pinterest was built for inspiration.<br>Not for briefing.</h2>
+      <p>Every designer uses it. Every designer knows its limits. IMPRINT is the tool Pinterest was never designed to be.</p>
     </div>
-    <div class="pain-grid reveal-stagger">
-      <div class="pain-card">
-        <div class="pain-badge">
-          <span class="pain-badge-style">Style: Timeless Classic</span>
-          <span style="margin:0 0.4rem;color:var(--soft)">·</span>
-          <span class="pain-badge-status">Rejected</span>
+    <div class="compare-table reveal-stagger">
+      <div class="compare-header">
+        <div class="compare-col compare-col--label"></div>
+        <div class="compare-col compare-col--pinterest">
+          <span class="compare-platform">Pinterest</span>
         </div>
-        <img class="pain-img" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Timeless%20Classic%20(1).png" alt="Timeless Classic interior" />
-        <h3>She said she loved it. Three weeks later, she still wasn't sure.</h3>
-        <p>Your best concept. Her best shrug. The "it's not quite me" with no explanation to follow. No way to know which part missed.</p>
+        <div class="compare-col compare-col--imprint">
+          <span class="compare-platform">IMPRINT™</span>
+          <span class="compare-platform-sub">Aesthetic Intelligence</span>
+        </div>
       </div>
-      <div class="pain-card">
-        <div class="pain-badge">
-          <span class="pain-badge-style">Style: Contemporary Classic</span>
-          <span style="margin:0 0.4rem;color:var(--soft)">·</span>
-          <span class="pain-badge-status">Rejected</span>
-        </div>
-        <img class="pain-img" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Contemporary%20Classic.png" alt="Contemporary Classic interior" />
-        <h3>An hour of Pinterest. A brief full of contradictions.</h3>
-        <p>An hour of Pinterest screenshots. Words that contradict each other. You leave with a notebook full of clues that don't add up.</p>
+      <div class="compare-row">
+        <div class="compare-row-label">What it captures</div>
+        <div class="compare-cell compare-cell--pinterest">Aspiration</div>
+        <div class="compare-cell compare-cell--imprint">Instinct</div>
       </div>
-      <div class="pain-card">
-        <div class="pain-badge">
-          <span class="pain-badge-style">Style: Industrial</span>
-          <span style="margin:0 0.4rem;color:var(--soft)">·</span>
-          <span class="pain-badge-status">Rejected</span>
-        </div>
-        <img class="pain-img" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Industrial.png" alt="Industrial interior" />
-        <h3>You gave her exactly what she asked for. It wasn't what she wanted.</h3>
-        <p>The brief was followed precisely. The instinct was never captured. There was no way to know the difference until the proposal landed wrong.</p>
+      <div class="compare-row">
+        <div class="compare-row-label">How clients use it</div>
+        <div class="compare-cell compare-cell--pinterest">Curated, self-conscious, edited</div>
+        <div class="compare-cell compare-cell--imprint">Unfiltered, immediate, unguarded</div>
       </div>
-      <div class="pain-card">
-        <div class="pain-badge">
-          <span class="pain-badge-style">Style: Quiet Luxury</span>
-          <span style="margin:0 0.4rem;color:var(--soft)">·</span>
-          <span class="pain-badge-status" style="color:#2d6a4f;border:1px solid rgba(45,106,79,0.25);">Aligned</span>
-        </div>
-        <img class="pain-img" src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Skandi.png" alt="Scandinavian interior" />
-        <h3>You already knew what she wanted. She just hadn't said it yet.</h3>
-        <p>The meeting where everything clicked. Before it started. The brief that wrote itself. The client who felt understood before you showed her anything.</p>
+      <div class="compare-row">
+        <div class="compare-row-label">What it gives you</div>
+        <div class="compare-cell compare-cell--pinterest">Images without hierarchy</div>
+        <div class="compare-cell compare-cell--imprint">Weighted preferences with scores</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-row-label">Partner dynamic</div>
+        <div class="compare-cell compare-cell--pinterest">Conflict hidden in a shared board</div>
+        <div class="compare-cell compare-cell--imprint">Fault lines mapped before you meet</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-row-label">Brief quality</div>
+        <div class="compare-cell compare-cell--pinterest">A starting point</div>
+        <div class="compare-cell compare-cell--imprint">A foundation</div>
       </div>
     </div>
   </div>
@@ -1854,8 +2042,8 @@ footer {
 <div class="img-break reveal">
   <img src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Timeless%20Classic%20(1).png" alt="" aria-hidden="true" />
   <div class="img-break-text">
-    <blockquote>"The studios using this aren't talking about it."</blockquote>
-    <span>IMPRINT — Aesthetic Intelligence for Design Studios</span>
+    <blockquote>"Pinterest finds the mood. IMPRINT finds the margin."</blockquote>
+    <span>Aesthetic Intelligence for Design Studios</span>
   </div>
 </div>
 
