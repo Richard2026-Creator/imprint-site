@@ -213,8 +213,9 @@ nav {
 }
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-size: clamp(2.8rem, 5.5vw, 6rem);
   font-weight: 300; line-height: 0.92;
+  letter-spacing: -0.04em;
   color: var(--stone);
   margin: 0 0 1.5rem;
 }
@@ -310,7 +311,7 @@ nav {
 .hero-card-tension-note strong { color: rgba(245,242,236,0.7); font-weight: 500; }
 .hero-h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.25rem, 2.25vw, 1.875rem);
   font-weight: 300; font-style: italic;
   color: rgba(245,242,236,0.55);
   max-width: 480px; margin: 0 0 2rem;
@@ -337,7 +338,7 @@ nav {
   .hero-bg-mobile { display: none !important; }
   .hero-content {
     background-image: url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/MobileBackground.png') !important;
-    background-size: 100% auto !important;
+    background-size: cover !important;
     background-position: center top !important;
     background-repeat: no-repeat !important;
     background-color: var(--ink) !important;
@@ -345,6 +346,10 @@ nav {
     background-clip: border-box !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    display: block !important;
+    box-sizing: border-box !important;
   }
   .hero-overlay { display: none !important; }
   .hero-inner {
@@ -397,7 +402,7 @@ nav {
 
   /* Tagline */
   .hero-h2 {
-    font-size: 1.15rem !important;
+    font-size: 1.265rem !important;
     line-height: 1.5 !important;
     max-width: 100% !important;
     margin-bottom: 2.8rem !important;
@@ -1538,7 +1543,7 @@ footer {
         <p>Capture your client's full aesthetic vision and remove guesswork from every interior design brief.</p>
       </span>
       <h1>She said cosy.<br>He said classic.<br><em>You said yes to both.</em></h1>
-      <p class="hero-h2">IMPRINT finds the brief they couldn't give you.</p>
+      <p class="hero-h2">Finally. You know what your client wants.</p>
       <div class="hero-actions">
         <a href="#cta" class="btn-gold">Start Free Trial</a>
         <a href="#how" class="btn-outline">See How It Works</a>
