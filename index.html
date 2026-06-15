@@ -219,7 +219,19 @@ nav {
   color: var(--stone);
   margin: 0 0 1.5rem;
 }
-.hero h1 em { font-style: normal; color: var(--gold-lt); }
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-lt);
+  font-size: 0.45em;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-top: 0.25em;
+}
+@media (min-width: 769px) {
+  .hero h1 em { margin-top: 0.225em; }
+}
 
 /* Report cards in hero-right */
 .hero-cards {
@@ -324,7 +336,9 @@ nav {
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+.mobile-br { display: none; }
 @media (max-width: 768px) {
+  .mobile-br { display: block; }
   .hero {
     min-height: 0 !important;
     max-height: unset !important;
@@ -1542,7 +1556,7 @@ footer {
         <h1>Interior Design Client Questionnaire</h1>
         <p>Capture your client's full aesthetic vision and remove guesswork from every interior design brief.</p>
       </span>
-      <h1>"I'll know it when I see it."<br><em>The most expensive words in interior design.</em></h1>
+      <h1>"I'll know it when<br class="mobile-br"> I see it."<br><em>The most expensive words in interior design.</em></h1>
 
       <div class="hero-actions">
         <a href="#cta" class="btn-gold">Start Free Trial</a>
