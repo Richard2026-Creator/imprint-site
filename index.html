@@ -351,7 +351,9 @@ nav {
   .hero-bg-desktop { display: none !important; }
   .hero-bg-mobile { display: none !important; }
   .hero-content {
-    background-image: url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/MobileBackground.png') !important;
+    background-image:
+      linear-gradient(to bottom, transparent 62%, #0e0d0b 97%),
+      url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/MobileBackground.png') !important;
     background-size: cover !important;
     background-position: center top !important;
     background-repeat: no-repeat !important;
@@ -377,7 +379,7 @@ nav {
   .hero-content {
     text-align: center !important;
     align-items: center !important;
-    padding: 7rem 1.8rem 3.5rem !important;
+    padding: 8rem 1.8rem 3.5rem !important;
     width: 100% !important;
   }
   .hero-right {
@@ -501,7 +503,7 @@ section { padding: 6rem 0; }
 
 /* ─── EXPLAINER (WHAT IS IMPRINT) ─── */
 .explainer {
-  background: var(--stone);
+  background: var(--near-black, #0d0d0d);
   border-top: 1px solid var(--rule);
 }
 .explainer-grid {
@@ -512,56 +514,339 @@ section { padding: 6rem 0; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3.5vw, 2.9rem); font-weight: 300; line-height: 1.2;
   margin-bottom: 1.4rem;
+  color: var(--stone, #f5f2ec);
 }
-.explainer-text h2 em { font-style: italic; color: var(--gold); }
+.explainer-text h2 em { font-style: italic; color: var(--gold-lt, #ceaf82); }
 .explainer-text p {
-  font-size: 1rem; color: var(--mid); line-height: 1.8; font-weight: 300;
-  margin-bottom: 1rem;
+  font-size: 1rem; color: var(--stone, #f5f2ec); line-height: 1.8; font-weight: 300;
+  margin-bottom: 1rem; opacity: 0.75;
 }
 .explainer-text p:last-of-type { margin-bottom: 0; }
-.explainer-text strong { color: var(--ink); font-weight: 500; }
+.explainer-text strong { color: var(--stone, #f5f2ec); font-weight: 500; }
 .explainer-stat-block {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  background: var(--warmer);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  background: transparent;
 }
 .explainer-stat {
-  background: var(--stone); padding: 2rem 1.8rem;
+  background: transparent; padding: 2rem 1.8rem;
   text-align: center;
 }
+
+.explainer-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.explainer-stat {
+  position: relative;
+  padding: 2.5rem;
+}
+
+.explainer-stat:nth-child(1),
+.explainer-stat:nth-child(2) {
+  border-bottom: 1px solid rgba(206, 175, 130, 0.3);
+}
+
+.explainer-stat:nth-child(1),
+.explainer-stat:nth-child(3) {
+  border-right: 1px solid rgba(206, 175, 130, 0.3);
+}
+
 .explainer-stat-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem; font-weight: 300; color: var(--ink);
+  font-size: 2.8rem; font-weight: 300; color: var(--stone, #f5f2ec);
   line-height: 1; margin-bottom: 0.4rem;
 }
-.explainer-stat-num span { color: var(--gold); }
+.explainer-stat-num span { color: var(--gold-lt, #ceaf82); }
 .explainer-stat-lbl {
   font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--soft);
+  color: var(--stone, #f5f2ec); opacity: 0.6;
+}
+.explainer .label { color: var(--gold-lt, #ceaf82); }
+
+.compare,
+.explainer,
+.method,
+.intel {
+  border-top: 1px solid rgba(206, 175, 130, 0.25);
+}
+
+video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Anaytics_Slow_4k.mp4"] {
+  filter: brightness(0.75) contrast(1.1) saturate(0.9);
+}
+
+video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrait.mp4"] {
+  filter: brightness(0.65) contrast(0.95);
+}
+
+/* ─── IMPRINT CONNECT ─── */
+.imprint-connect {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background-image: url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Imprint%20Connect%20Desktop%202.png');
+  background-size: cover;
+  background-position: left center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(206, 175, 130, 0.25);
+}
+
+.connect-inner {
+  width: 45%;
+  margin-left: auto;
+  padding: 8rem 6rem 8rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  min-height: 90vh;
+  box-sizing: border-box;
+}
+
+.connect-text {
+  max-width: 480px;
+}
+
+.connect-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  font-weight: 300;
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.connect-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 300;
+  color: var(--stone, #f5f2ec);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.connect-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 300;
+  color: var(--stone, #f5f2ec);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+.connect-body-gold {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 300;
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+  opacity: 1;
+}
+
+.btn-connect {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background: var(--gold-lt, #ceaf82);
+  border: none;
+  border-radius: 999px;
+  color: #0d0d0d;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.btn-connect:hover {
+  background: var(--stone, #f5f2ec);
+  color: #0d0d0d;
+}
+
+.connect-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: var(--stone, #f5f2ec);
+  opacity: 0.7;
+  margin-top: 1rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.connect-email-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+.connect-email-wrap .btn-connect {
+  margin-top: 0.4rem;
+}
+
+.connect-email-input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(206, 175, 130, 0.4);
+  border-radius: 4px;
+  padding: 0.85rem 1.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: var(--stone, #f5f2ec);
+  letter-spacing: 0.03em;
+  outline: none;
+  transition: border-color 0.25s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.connect-email-input::placeholder {
+  color: rgba(245, 242, 236, 0.35);
+}
+
+.connect-email-input:focus {
+  border-color: rgba(206, 175, 130, 0.7);
+}
+
+.connect-email-error {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: rgba(206, 175, 130, 0.9);
+  font-style: italic;
+  min-height: 1.1em;
+}
+
+.btn-connect {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.btn-connect:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .imprint-connect {
+    background-image: url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Imprint%20Connect%20Portrait.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: #0d0d0d;
+    min-height: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 75vw;
+  }
+
+  .imprint-connect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 52vw;
+    height: 23vw;
+    background: linear-gradient(to bottom, transparent, #0d0d0d);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .connect-inner {
+    width: 100%;
+    margin-left: 0;
+    padding: 3rem 2rem 0.5rem 2rem;
+    min-height: auto;
+    background: #0d0d0d;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+
+  .connect-text {
+    max-width: 100%;
+  }
+
+  .connect-headline {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .connect-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .connect-body-gold {
+    font-size: 1rem;
+  }
+
+  .btn-connect {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .connect-sub {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.8rem;
+  }
 }
 
 /* ─── PINTEREST vs IMPRINT COMPARISON ─── */
-.compare { background: var(--warm); }
+.compare { background: #0d0d0d; }
+.compare .container { max-width: 1400px; }
 .compare-table {
   margin-top: 3.5rem;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid rgba(185,154,104,0.25);
 }
 .compare-header {
   display: grid;
-  grid-template-columns: 0.7fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .compare-col {
   padding: 1.6rem 1.8rem 1.2rem;
   text-align: center;
 }
 .compare-col--imprint {
-  background: rgba(185,154,104,0.08);
+  background: rgba(185,154,104,0.16);
   border-radius: 2px 2px 0 0;
+}
+.compare-col--brief {
+  border-right: 1px solid rgba(185,154,104,0.25);
+}
+.compare-col--pinterest {
+  border-right: 1px solid rgba(185,154,104,0.25);
 }
 .compare-platform {
   font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
   display: block; font-weight: 500;
 }
-.compare-col--pinterest .compare-platform { color: var(--mid); }
+.compare-col--brief .compare-platform { color: var(--stone); opacity: 0.6; }
+.compare-col--pinterest .compare-platform { color: var(--stone); }
 .compare-col--imprint .compare-platform { color: var(--gold); }
 .compare-platform-sub {
   font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -569,17 +854,18 @@ section { padding: 6rem 0; }
 }
 .compare-row {
   display: grid;
-  grid-template-columns: 0.7fr 1fr 1fr;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid rgba(185,154,104,0.25);
 }
 .compare-row-label {
-  padding: 1.5rem 1.8rem 1.5rem 0;
-  font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--soft); display: flex; align-items: center;
-  border-right: 1px solid rgba(14,13,11,0.08);
-}
-.compare-col--label {
-  border-right: 1px solid rgba(14,13,11,0.08);
+  grid-column: 1 / -1;
+  padding: 0.9rem 1.8rem 0.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--soft);
+  display: block;
+  border-bottom: 1px solid rgba(185,154,104,0.15);
 }
 .compare-cell {
   padding: 1.5rem 1.8rem;
@@ -588,12 +874,17 @@ section { padding: 6rem 0; }
   font-weight: 300; line-height: 1.45;
   display: flex; align-items: center;
 }
+.compare-cell--brief {
+  color: var(--stone); font-style: italic; opacity: 0.55;
+  border-right: 1px solid rgba(185,154,104,0.25);
+}
 .compare-cell--pinterest {
-  color: var(--mid); font-style: italic;
+  color: var(--stone); font-style: italic;
+  border-right: 1px solid rgba(185,154,104,0.25);
 }
 .compare-cell--imprint {
-  color: var(--ink); font-weight: 400;
-  background: rgba(185,154,104,0.06);
+  color: var(--stone); font-weight: 400;
+  background: rgba(185,154,104,0.13);
 }
 
 .compare-table.reveal-stagger > * {
@@ -616,10 +907,9 @@ section { padding: 6rem 0; }
   .compare-header {
     display: flex;
   }
-  .compare-col--label { display: none; }
-  .compare-row-label { border-right: none; }
+  .compare-col--brief,
   .compare-col--pinterest,
-  .compare-col--imprint { flex: 1; padding: 1rem; }
+  .compare-col--imprint { flex: 1; padding: 0.9rem 0.6rem; border-right: none; }
 
   .compare-row {
     display: flex;
@@ -636,15 +926,19 @@ section { padding: 6rem 0; }
     color: var(--soft);
     display: block;
     text-align: center;
-    border-bottom: 1px solid rgba(14,13,11,0.1);
+    border-bottom: 1px solid rgba(245,242,236,0.12);
+    border-bottom: 1px solid rgba(185,154,104,0.15);
     margin: 0;
+    grid-column: unset;
   }
+  .compare-cell--brief,
   .compare-cell--pinterest,
   .compare-cell--imprint {
     flex: 1;
-    padding: 0.3rem 1rem 1.1rem;
-    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem 1rem;
+    font-size: 0.82rem;
     display: block;
+    border-right: none;
   }
 }
 
@@ -653,38 +947,6 @@ section { padding: 6rem 0; }
 .pain-badge-status { display: none; }
 .pain-img { display: none; }
 
-/* ─── FULL BLEED IMAGE BREAK ─── */
-.img-break {
-  position: relative; height: 420px; overflow: hidden;
-}
-.img-break img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(15%);
-}
-.img-break::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(14,13,11,0.5) 0%, rgba(14,13,11,0.7) 100%);
-}
-.img-break-text {
-  position: absolute; inset: 0; z-index: 1;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center;
-}
-.img-break-text blockquote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-  font-weight: 300; font-style: italic;
-  color: var(--stone); line-height: 1.35;
-  max-width: 720px; padding: 0 2rem;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-}
-.img-break-text span {
-  display: block; margin-top: 1rem;
-  font-size: 0.68rem; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--gold);
-}
 .pain-card h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem; font-weight: 600; line-height: 1.25;
@@ -1011,7 +1273,7 @@ footer {
   .explainer-grid, .cap-block, .cap-block.flip { grid-template-columns: 1fr; }
   .cap-block.flip .cap-text { order: 1; }
   .cap-block.flip .cap-visual { order: 2; }
-  .cap-text { border-right: none !important; border-left: none !important; border-bottom: 1px solid var(--rule); }
+  .cap-text { border-right: none !important; border-left: none !important; border-bottom: none; padding: 1.8rem 2rem 2.2rem; }
   .cap-visual { min-height: 320px; }
   .pain-grid { grid-template-columns: 1fr 1fr; }
   .method-cards { grid-template-columns: 1fr; }
@@ -1029,6 +1291,40 @@ footer {
   .pain-grid, .built-grid, .pricing-grid, .usecase-grid { grid-template-columns: 1fr; }
   .pain-grid { align-items: start; }
   .explainer-stat-block { grid-template-columns: 1fr 1fr; }
+
+  .explainer-grid {
+    overflow: hidden;
+  }
+
+  .explainer-text {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .explainer-text p,
+  .explainer-text h2 {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .explainer-stat-block {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .explainer-stat {
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 1.5rem 1rem;
+  }
 }
 
 /* Fix mobile video centering handled in 768px block above */
@@ -1270,7 +1566,7 @@ footer {
 
 /* Beat 3: Couple comparison */
 .intel-couple-wrap {
-  padding: 6rem 0;
+  padding: 6rem 0 0;
   border-bottom: 1px solid rgba(245,242,236,0.08);
 }
 .intel-couple-intro { text-align: center; margin-bottom: 4rem; }
@@ -1344,20 +1640,6 @@ footer {
   line-height: 1.6; max-width: 180px;
 }
 
-/* Closing */
-.intel-close { padding: 7rem 0; text-align: center; }
-.intel-close-p {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: rgba(245,242,236,0.4); font-weight: 300;
-  letter-spacing: 0.02em; margin-bottom: 0.5rem;
-}
-.intel-close-h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 300; font-style: italic;
-  color: var(--stone); line-height: 1.05;
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .intel-stats { grid-template-columns: 1fr; }
@@ -1374,8 +1656,7 @@ footer {
   .intel-opener { padding: 4rem 0 2.5rem; }
   .intel-opener .container,
   .intel-profile-wrap .container,
-  .intel-couple-wrap .container,
-  .intel-close .container { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .intel-couple-wrap .container { padding-left: 1.4rem; padding-right: 1.4rem; }
   .intel-profile {
     padding: 1.8rem 1.4rem;
     grid-template-columns: 1fr;
@@ -1395,19 +1676,18 @@ footer {
   }
   .intel-rej-row span:first-child { font-size: 0.65rem; }
   .intel-stat-block { padding: 2.5rem 1.4rem; }
-  .intel-close { padding: 4rem 0; }
   .intel-influence-tags { gap: 0.3rem; }
   .intel-influence-tags span { font-size: 0.55rem; padding: 0.25rem 0.5rem; }
 }
 @media (max-width: 768px) {
   .intel-video-desktop { display: none; }
   .intel-video-wrap { height: auto; overflow: visible; width: 100% !important; left: auto !important; right: auto !important; margin-left: 0 !important; margin-right: 0 !important; }
-  .intel-video-mobile { display: block; width: 100%; height: 72vw; object-fit: cover; object-position: center; }
+  .intel-video-mobile { display: none !important; }
   .intel-video-caption { position: static; background: none; padding: 1.2rem 1.8rem; font-size: 0.7rem; letter-spacing: 0.16em; color: rgba(245,242,236,0.7); }
   .intel-stat-block:last-child { padding-bottom: 1.4rem; }
 
   /* Partner Comparison — mobile layout */
-  .intel-couple-wrap { padding: 4rem 0; }
+  .intel-couple-wrap { padding: 4rem 0 0; }
   .intel-couple-intro { margin-bottom: 2.5rem; }
   .intel-couple-h3 { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.3; }
   .intel-couple-h3 br { display: none; }
@@ -1463,6 +1743,308 @@ footer {
     padding-bottom: 0;
   }
 }
+
+/* ─── COMMERCIAL HOOK ─── */
+.commercial-hook {
+  background: var(--near-black, #0d0d0d);
+  padding: 8rem 4rem 4rem 4rem;
+  text-align: center;
+}
+.commercial-hook-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hook-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+.hook-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 300;
+  color: var(--stone, #f5f2ec);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-bottom: 4rem;
+}
+.hook-statements p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 300;
+  color: var(--stone, #f5f2ec);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+.hook-statements p:last-child {
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .capabilities .section-header { margin-bottom: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+  .commercial-hook {
+    padding: 5rem 2rem;
+  }
+
+  .commercial-hook-inner {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hook-eyebrow {
+    font-size: 1rem;
+  }
+
+  .hook-headline {
+    font-size: 3.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hook-statements p {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+    white-space: normal;
+  }
+}
+
+.problem-framing {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  background-color: var(--ink, #0e0d0b);
+  background-image:
+    linear-gradient(to right, #0e0d0b 44%, rgba(14,13,11,0) 52%),
+    url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Imprint%20Connect%20No%20Mac2.png');
+  background-size: cover, 56% auto;
+  background-position: left center, right center;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 68px;
+  padding-left: 6%;
+  box-sizing: border-box;
+}
+
+.problem-framing-inner {
+  padding: 6rem 6rem;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  position: relative;
+  z-index: 1;
+}
+
+.problem-line-1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  font-weight: 300;
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+  display: block;
+  white-space: nowrap;
+}
+
+.problem-line-2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.2vw, 3.75rem);
+  font-weight: 300;
+  color: var(--stone, #f5f2ec);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  display: block;
+  white-space: normal;
+}
+
+.problem-line-3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 300;
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  display: block;
+  white-space: nowrap;
+}
+
+.problem-tertiary {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 300;
+  color: var(--stone, #f5f2ec);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.video-reveal {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 0;
+  position: relative;
+}
+
+.video-reveal-mobile { display: none; }
+@media (min-width: 769px) {
+  .video-reveal-mobile { display: none !important; }
+}
+@media (max-width: 768px) {
+  .video-reveal-desktop { display: none !important; }
+  .video-reveal-mobile { display: block !important; }
+}
+
+@media (max-width: 768px) {
+  .video-reveal {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    font-size: 0;
+    max-height: 118vw;
+  }
+
+  .video-reveal video {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .video-overlay-title {
+    position: absolute;
+    top: 1.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 260px;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 0.96;
+    letter-spacing: 0.02em;
+    font-style: italic;
+    color: var(--gold-lt, #ceaf82);
+    padding: 0.4rem 0.8rem;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    z-index: 10;
+    box-sizing: border-box;
+  }
+
+  .problem-framing {
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image:
+      url('https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Mobile%20Connect.png');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #0e0d0b;
+    padding-top: calc(68px + 60vw);
+  }
+
+  .problem-framing-inner {
+    padding: 3rem 2rem 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  .problem-line-1 {
+    font-size: 1rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .problem-line-2 {
+    font-size: 2rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.1;
+  }
+
+  .problem-line-3 {
+    font-size: 2rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.1;
+  }
+}
+
+.video-overlay-title {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.96rem, 3.08vw, 3.08rem);
+  font-weight: 300;
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: none;
+}
+
+.video-title {
+  background: #0d0d0d;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.video-title-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 300;
+  color: var(--gold-lt, #ceaf82);
+  font-style: italic;
+  letter-spacing: 0.08em;
+  margin: 0;
+  padding: 0;
+}
+
+.compare .section-header h2 { color: var(--stone); }
+.compare .section-header h2 em { color: var(--gold-lt); }
+.compare .section-header p { color: var(--soft); }
+.compare .label { color: var(--gold-lt); }
 </style>
 <style>
 .imp-overlay{display:none;position:fixed;inset:0;background:rgba(18,18,16,0.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:24px;}
@@ -1559,8 +2141,8 @@ footer {
       <h1>"I'll know it when<br class="mobile-br"> I see it."<br><em>The most expensive words in interior design.</em></h1>
 
       <div class="hero-actions">
-        <a href="#cta" class="btn-gold">Start Free Trial</a>
-        <a href="#how" class="btn-outline">Book a 15-Min Demo</a>
+        <a href="#pricing" class="btn-gold">Start Free Trial</a>
+        <a href="https://calendly.com/richard-creativise/meeting-with-richard" class="btn-outline" target="_blank" rel="noopener noreferrer">Book a 15-Min Demo</a>
       </div>
     </div>
     <div class="hero-right">
@@ -1654,17 +2236,63 @@ footer {
   </div>
 </div>
 
+<!-- COMMERCIAL HOOK -->
+<section class="commercial-hook reveal">
+  <div class="commercial-hook-inner">
+    <p class="hook-eyebrow">Your creativity isn't the risk.</p>
+    <h2 class="hook-headline">The brief is.</h2>
+    <div class="hook-statements">
+      <p>Every revision you didn't need to do is margin you keep.</p>
+      <p>Every one you did is margin you'll never see again.</p>
+      <p>Clients don't lie. They just can't tell you the truth until it's too late.</p>
+      <p>Pinterest finds the mood. Imprint finds what it means.</p>
+    </div>
+  </div>
+</section>
+
+<section class="video-reveal reveal">
+  <div class="video-overlay-title">
+  See the intelligence in action.
+</div>
+  <video class="video-reveal-desktop"
+    src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Anaytics_Slow_4k.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    style="width:100%; display:block; margin:0; padding:0;">
+  </video>
+  <video class="video-reveal-mobile"
+    src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrait.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    style="width:100%; display:block; margin:0; padding:0;">
+  </video>
+</section>
+
+<section class="problem-framing reveal">
+  <div class="problem-framing-inner">
+    <p class="problem-line-1">Pinterest finds the mood.</p>
+    <p class="problem-line-2">It was never built to find what's underneath it.</p>
+    <p class="problem-tertiary">Already saving boards? Connect brings them into Imprint. More below.</p>
+  </div>
+</section>
+
 <!-- PAIN CARDS -->
 <section class="compare reveal" id="how">
   <div class="container">
     <div class="section-header">
       <span class="label">The Alternative</span>
-      <h2>Pinterest was built for inspiration.<br>Not for briefing.</h2>
-      <p>Every designer uses it. Every designer knows its limits. IMPRINT is the tool Pinterest was never designed to be.</p>
+      <h2>Pinterest finds the mood. It was never built to find the meaning.</h2>
+      <p>Every designer uses it. Every designer knows where it stops. Imprint is what happens next.</p>
     </div>
     <div class="compare-table reveal-stagger">
       <div class="compare-header">
-        <div class="compare-col compare-col--label"></div>
+        <div class="compare-col compare-col--brief">
+          <span class="compare-platform">Written Brief</span>
+        </div>
         <div class="compare-col compare-col--pinterest">
           <span class="compare-platform">Pinterest</span>
         </div>
@@ -1675,29 +2303,52 @@ footer {
       </div>
       <div class="compare-row">
         <div class="compare-row-label">What it captures</div>
+        <div class="compare-cell compare-cell--brief">Interpretation</div>
         <div class="compare-cell compare-cell--pinterest">Aspiration</div>
         <div class="compare-cell compare-cell--imprint">Instinct</div>
       </div>
       <div class="compare-row">
         <div class="compare-row-label">How clients use it</div>
+        <div class="compare-cell compare-cell--brief">Filtered through language</div>
         <div class="compare-cell compare-cell--pinterest">Curated, self-conscious, edited</div>
         <div class="compare-cell compare-cell--imprint">Unfiltered, immediate, unguarded</div>
       </div>
       <div class="compare-row">
         <div class="compare-row-label">What it gives you</div>
+        <div class="compare-cell compare-cell--brief">Answers without precision</div>
         <div class="compare-cell compare-cell--pinterest">Images without hierarchy</div>
         <div class="compare-cell compare-cell--imprint">Weighted preferences with scores</div>
       </div>
       <div class="compare-row">
         <div class="compare-row-label">Partner dynamic</div>
+        <div class="compare-cell compare-cell--brief">Contradiction buried in vague adjectives</div>
         <div class="compare-cell compare-cell--pinterest">Conflict hidden in a shared board</div>
         <div class="compare-cell compare-cell--imprint">Fault lines mapped before you meet</div>
       </div>
       <div class="compare-row">
         <div class="compare-row-label">Brief quality</div>
+        <div class="compare-cell compare-cell--brief">Open to interpretation</div>
         <div class="compare-cell compare-cell--pinterest">A starting point</div>
         <div class="compare-cell compare-cell--imprint">A foundation</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="imprint-connect reveal">
+  <div class="connect-inner">
+    <div class="connect-text">
+      <p class="connect-eyebrow">Imprint Connect</p>
+      <h2 class="connect-headline">Pinterest won't let you download more than one image at a time. We fixed that.</h2>
+      <p class="connect-body">Most designers start on Pinterest. Forty pins. Forty downloads. One at a time. That's not a workflow. That's a chore.</p>
+      <p class="connect-body">So we built a free Chrome extension that does it properly. Open a board. Pick your images. Download the lot in seconds, tagged and ready, straight into your Imprint library.</p>
+      <p class="connect-body connect-body-gold">Your brief starts building before the first conversation has even begun.</p>
+      <div class="connect-email-wrap">
+        <input type="email" id="connectEmail" class="connect-email-input" placeholder="Your email address" autocomplete="email">
+        <p class="connect-email-error" id="connectError"></p>
+        <button type="button" id="connectBtn" class="btn-connect">Get Imprint Connect Free</button>
+      </div>
+      <p class="connect-sub">Free forever. Add your email to access the Chrome extension.</p>
     </div>
   </div>
 </section>
@@ -1709,7 +2360,7 @@ footer {
       <div class="explainer-text">
         <span class="label">The Science</span>
         <h2>IMPRINT is a swipe-based discovery session you send <em>before the brief.</em></h2>
-        <p style="font-size:0.85rem;letter-spacing:0.06em;color:var(--soft);margin-bottom:1.4rem;font-weight:400;text-transform:uppercase;">The brief writes itself.</p>
+        <p style="font-size:0.85rem;letter-spacing:0.06em;color:var(--gold-lt, #ceaf82);margin-bottom:1.4rem;font-weight:400;text-transform:uppercase;">The brief writes itself.</p>
         <p>Your clients know exactly what they want. They just can't tell you. And the longer they try, the further you drift. IMPRINT captures taste before language gets in the way. Branded to your studio. Ready before the first call.</p>
       </div>
       <div class="explainer-stat-block">
@@ -1791,17 +2442,6 @@ footer {
       <div class="intel-stat-rule"></div>
       <div class="intel-stat-label">Misunderstandings when<br>you start with the data.</div>
     </div>
-  </div>
-
-  <!-- Beat 1.5: Analytics video -->
-  <div class="intel-video-wrap">
-    <video class="intel-video intel-video-desktop" autoplay muted loop playsinline>
-      <source src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Anaytics_Slow_4k.mp4" type="video/mp4">
-    </video>
-    <video class="intel-video intel-video-mobile" autoplay muted loop playsinline>
-      <source src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Mobile_Crop_2.mp4" type="video/mp4">
-    </video>
-    <p class="intel-video-caption">Client swipes on their phone. The brief writes itself in your studio.</p>
   </div>
 
   <!-- Beat 2: Single client profile -->
@@ -1930,14 +2570,6 @@ footer {
     </div>
   </div>
 
-  <!-- Closing line -->
-  <div class="intel-close">
-    <div class="container">
-      <p class="intel-close-p">Stop guessing what your clients mean.</p>
-      <h2 class="intel-close-h2"><em>Start knowing.</em></h2>
-      <a href="#cta" class="btn-gold" style="margin-top:2.5rem;display:inline-block;">Start Free Trial</a>
-    </div>
-  </div>
 
 </section>
 
@@ -2077,15 +2709,6 @@ footer {
     </div>
   </div>
 </section>
-
-<!-- FULL BLEED IMAGE BREAK -->
-<div class="img-break reveal">
-  <img src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Timeless%20Classic%20(1).png" alt="" aria-hidden="true" />
-  <div class="img-break-text">
-    <blockquote>"Pinterest finds the mood. IMPRINT finds the margin."</blockquote>
-    <span>Aesthetic Intelligence for Design Studios</span>
-  </div>
-</div>
 
 <!-- PRICING -->
 <section class="pricing reveal" id="pricing">
@@ -2269,24 +2892,6 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
   revealObserver.observe(el);
 });
 
-/* ─── Parallax on image break ─── */
-const imgBreak = document.querySelector('.img-break');
-if (imgBreak) {
-  const breakImg = imgBreak.querySelector('img');
-  if (breakImg) {
-    breakImg.style.transition = 'none';
-    breakImg.style.willChange = 'transform';
-    window.addEventListener('scroll', () => {
-      const rect = imgBreak.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      if (rect.bottom > 0 && rect.top < windowH) {
-        const progress = (windowH - rect.top) / (windowH + rect.height);
-        const shift = (progress - 0.5) * 60;
-        breakImg.style.transform = 'scale(1.12) translateY(' + shift + 'px)';
-      }
-    }, { passive: true });
-  }
-}
 
 /* ─── FAQ Accordion ─── */
 document.querySelectorAll('.faq-q').forEach(q => {
@@ -2308,6 +2913,39 @@ const capObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.2 });
 document.querySelectorAll('.cap-visual').forEach(el => capObserver.observe(el));
+
+/* ─── Imprint Connect email capture ─── */
+(function () {
+  var btn = document.getElementById('connectBtn');
+  var input = document.getElementById('connectEmail');
+  var error = document.getElementById('connectError');
+  if (!btn || !input || !error) return;
+
+  btn.addEventListener('click', function () {
+    var email = input.value.trim();
+    var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!valid) {
+      error.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    error.textContent = '';
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    fetch('https://script.google.com/macros/s/AKfycbwcycP1x9G2-xrzpM8U63nDOz4OalG8kfZy0i_RQIkUk7JvD5IiiMPpkMxlLZAd-Gzj/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    }).catch(function () {});
+
+    setTimeout(function () {
+      window.location.href = 'https://chromewebstore.google.com/detail/imprint-connect/nanloabmdabnnkljnddnkhdfceebhnbo?utm_source=item-share-cb';
+    }, 1500);
+  });
+})();
 </script>
 
 <div class="imp-overlay" id="impOverlay">
