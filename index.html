@@ -241,10 +241,12 @@ nav {
 .hero-card {
   background: rgba(14,13,11,0.82);
   border: 1px solid rgba(185,154,104,0.25);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   border-radius: 6px;
   padding: 1.4rem 1.6rem;
   color: var(--stone);
 }
+.hero-card:hover { transform: translateY(-3px); border-color: rgba(185,154,104,0.5); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
 .hero-card-label {
   font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 0.5rem; display: block;
@@ -457,10 +459,10 @@ nav {
   background: var(--gold); color: var(--ink);
   padding: 0.95rem 2.4rem; font-size: 0.8rem;
   letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
-  text-decoration: none; transition: background 0.2s, transform 0.15s;
+  text-decoration: none; transition: background 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-block; border-radius: 999px;
 }
-.btn-gold:hover { background: var(--gold-lt); transform: translateY(-1px); }
+.btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
 .btn-outline {
   border: 1px solid rgba(245,242,236,0.25); color: rgba(245,242,236,0.7);
   padding: 0.95rem 2.4rem; font-size: 0.8rem;
@@ -504,7 +506,7 @@ section { padding: 6rem 0; }
 /* ─── EXPLAINER (WHAT IS IMPRINT) ─── */
 .explainer {
   background: var(--near-black, #0d0d0d);
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid rgba(185,154,104,0.18);
 }
 .explainer-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -670,7 +672,7 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   width: fit-content;
   font-weight: 500;
 }
@@ -707,7 +709,6 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
   border: 1px solid rgba(206, 175, 130, 0.4);
   border-radius: 4px;
   padding: 0.85rem 1.2rem;
-  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   color: var(--stone, #f5f2ec);
   letter-spacing: 0.03em;
@@ -817,7 +818,7 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
 }
 
 /* ─── PINTEREST vs IMPRINT COMPARISON ─── */
-.compare { background: #0d0d0d; }
+.compare { background: #0d0d0d; border-top: 1px solid rgba(185,154,104,0.18); }
 .compare .container { max-width: 1400px; }
 .compare-table {
   margin-top: 3.5rem;
@@ -958,7 +959,7 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
 }
 
 /* ─── METHOD ─── */
-.method { background: var(--ink); color: var(--stone); }
+.method { background: var(--ink); color: var(--stone); border-top: 1px solid rgba(185,154,104,0.18); }
 .method .section-header h2 { color: var(--stone); }
 .method .section-header h2 em { color: var(--gold-lt); }
 .method .section-header p { color: rgba(245,242,236,0.5); }
@@ -970,7 +971,9 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
 .method-card {
   background: var(--ink); padding: 3rem 2.4rem;
   border-top: 1px solid rgba(245,242,236,0.08);
+  transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
+.method-card:hover { transform: translateY(-3px); border-top-color: rgba(185,154,104,0.45); }
 .method-card-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 3rem; font-weight: 300; color: var(--gold);
@@ -1139,7 +1142,8 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
   gap: 1px; background: var(--warmer);
   margin-top: 3rem;
 }
-.built-card { background: var(--stone); padding: 2.4rem 2.2rem; }
+.built-card { background: var(--stone); padding: 2.4rem 2.2rem; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.built-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
 .built-icon { font-size: 1rem; margin-bottom: 1.2rem; color: var(--gold); display: block; }
 .built-card h3 {
   font-family: 'Cormorant Garamond', serif;
@@ -1151,7 +1155,8 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
 /* ─── USE CASES ─── */
 .usecases { background: var(--stone); }
 .usecase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); margin-top: 3rem; }
-.usecase-card { background: var(--stone); padding: 3rem 2.4rem; border-top: 2px solid var(--ink); }
+.usecase-card { background: var(--stone); padding: 3rem 2.4rem; border-top: 2px solid var(--ink); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.usecase-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
 .usecase-badge { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--soft); margin-bottom: 1.4rem; display: block; }
 .usecase-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; line-height: 1.15; margin-bottom: 0.9rem; }
 .usecase-card p { font-size: 0.9rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
@@ -1170,7 +1175,9 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
 /* ─── PRICING ─── */
 .pricing { background: var(--warm); }
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--warmer); margin-top: 3rem; }
-.pricing-card { background: var(--stone); padding: 2.8rem 2.4rem; display: flex; flex-direction: column; }
+.pricing-card { background: var(--stone); padding: 2.8rem 2.4rem; display: flex; flex-direction: column; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.pricing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+.pricing-card.featured:hover { box-shadow: 0 12px 40px rgba(185,154,104,0.2); }
 .pricing-card.featured { background: var(--ink); color: var(--stone); }
 .pricing-tier { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: block; }
 .pricing-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.6rem; }
@@ -1220,6 +1227,7 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
 .faq-q {
   font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600;
   line-height: 1.25; padding: 1.4rem 0; cursor: pointer;
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex; justify-content: space-between; align-items: center; gap: 1rem;
   user-select: none;
 }
@@ -1229,6 +1237,7 @@ video[src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/Analytics_Portrai
   flex-shrink: 0;
 }
 .faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-q:hover { color: var(--ink); }
 .faq-a {
   font-size: 0.88rem; color: var(--mid); line-height: 1.75; font-weight: 300;
   max-height: 0; overflow: hidden; padding: 0;
@@ -1353,6 +1362,10 @@ footer {
 .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.36s; }
 .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.48s; }
 .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.60s; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.72s; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.84s; }
+.reveal-stagger.visible > *:nth-child(9) { transition-delay: 0.96s; }
+.reveal-stagger.visible > *:nth-child(10) { transition-delay: 1.08s; }
 
 /* ─── STUDIO INTELLIGENCE ─── */
 .intel { background: var(--ink); overflow-x: hidden; }
@@ -1821,6 +1834,7 @@ footer {
 .problem-framing {
   position: relative;
   width: 100%;
+  border-top: 1px solid rgba(185,154,104,0.18);
   min-height: 70vh;
   background-color: var(--ink, #0e0d0b);
   background-image:
@@ -1898,6 +1912,7 @@ footer {
 .video-reveal {
   width: 100%;
   overflow: hidden;
+  border-top: 1px solid rgba(185,154,104,0.18);
   line-height: 0;
   background: #000;
   margin: 0;
@@ -2215,7 +2230,7 @@ footer {
     <li>What existing pieces would you like to keep?</li>
     <li>How do you want your home to feel?</li>
   </ul>
-  <p>These questions are familiar to every interior design questionnaire, but answers are often vague, inconsistent, and open to interpretation. IMPRINT replaces written guesswork with instant visual clarity.</p>
+  <p>These questions are familiar to every interior design questionnaire, but answers are often vague, inconsistent, and open to interpretation. IMPRINT™ replaces written guesswork with instant visual clarity.</p>
 </section>
 
 <!-- TICKER -->
@@ -2241,11 +2256,11 @@ footer {
   <div class="commercial-hook-inner">
     <p class="hook-eyebrow">Your creativity isn't the risk.</p>
     <h2 class="hook-headline">The brief is.</h2>
-    <div class="hook-statements">
+    <div class="hook-statements reveal-stagger">
       <p>Every revision you didn't need to do is margin you keep.</p>
       <p>Every one you did is margin you'll never see again.</p>
       <p>Clients don't lie. They just can't tell you the truth until it's too late.</p>
-      <p>Pinterest finds the mood. Imprint finds what it means.</p>
+      <p>Pinterest finds the mood. IMPRINT™ finds what it means.</p>
     </div>
   </div>
 </section>
@@ -2273,7 +2288,7 @@ footer {
 </section>
 
 <section class="problem-framing reveal">
-  <div class="problem-framing-inner">
+  <div class="problem-framing-inner reveal-stagger">
     <p class="problem-line-1">Pinterest finds the mood.</p>
     <p class="problem-line-2">It was never built to find what's underneath it.</p>
     <p class="problem-tertiary">Already saving boards? IMPRINT™ Connect brings them in. More below.</p>
@@ -2338,7 +2353,7 @@ footer {
 <section class="imprint-connect reveal">
   <div class="connect-inner">
     <div class="connect-text">
-      <p class="connect-eyebrow">Imprint Connect</p>
+      <p class="connect-eyebrow">IMPRINT™ Connect</p>
       <h2 class="connect-headline">Pinterest won't let you download more than one image at a time. We fixed that.</h2>
       <p class="connect-body">Forty pins. Forty downloads. One at a time. That's not a workflow. That's a chore.</p>
       <p class="connect-body">IMPRINT™ Connect fixes it, free. Open a board, pick your images, download the lot in seconds, straight into your library.</p>
@@ -2346,7 +2361,7 @@ footer {
       <div class="connect-email-wrap">
         <input type="email" id="connectEmail" class="connect-email-input" placeholder="Your email address" autocomplete="email">
         <p class="connect-email-error" id="connectError"></p>
-        <button type="button" id="connectBtn" class="btn-connect">Get Imprint Connect Free</button>
+        <button type="button" id="connectBtn" class="btn-connect">Get IMPRINT™ Connect Free</button>
       </div>
       <p class="connect-sub">Free forever. Add your email to access the Chrome extension.</p>
     </div>
@@ -2359,11 +2374,11 @@ footer {
     <div class="explainer-grid">
       <div class="explainer-text">
         <span class="label">The Science</span>
-        <h2>IMPRINT is a swipe-based discovery session you send <em>before the brief.</em></h2>
+        <h2>IMPRINT™ is a swipe-based discovery session you send <em>before the brief.</em></h2>
         <p style="font-size:0.85rem;letter-spacing:0.06em;color:var(--gold-lt, #ceaf82);margin-bottom:1.4rem;font-weight:400;text-transform:uppercase;">The brief writes itself.</p>
-        <p>Your clients know exactly what they want. They just can't tell you. And the longer they try, the further you drift. IMPRINT captures taste before language gets in the way. Branded to your studio. Ready before the first call.</p>
+        <p>Your clients know exactly what they want. They just can't tell you. And the longer they try, the further you drift. IMPRINT™ captures taste before language gets in the way. Branded to your studio. Ready before the first call.</p>
       </div>
-      <div class="explainer-stat-block">
+      <div class="explainer-stat-block reveal-stagger">
         <div class="explainer-stat">
           <div class="explainer-stat-num">7<span>min</span></div>
           <div class="explainer-stat-lbl">Or less</div>
@@ -2414,7 +2429,7 @@ footer {
 </section>
 
 <!-- STUDIO INTELLIGENCE -->
-<section class="intel">
+<section class="intel reveal">
 
   <!-- Section opener -->
   <div class="intel-opener">
@@ -2426,7 +2441,7 @@ footer {
   </div>
 
   <!-- Beat 1: Stats -->
-  <div class="intel-stats">
+  <div class="intel-stats reveal-stagger">
     <div class="intel-stat-block">
       <div class="intel-stat-num">7<span>min</span></div>
       <div class="intel-stat-rule"></div>
@@ -2532,9 +2547,9 @@ footer {
     <div class="container">
       <div class="intel-couple-intro">
         <p class="intel-couple-label">Partner Comparison</p>
-        <h3 class="intel-couple-h3">When two people share a space<br>but not a taste, IMPRINT finds<br>the answer <em>before the argument starts.</em></h3>
+        <h3 class="intel-couple-h3">When two people share a space<br>but not a taste, IMPRINT™ finds<br>the answer <em>before the argument starts.</em></h3>
       </div>
-      <div class="intel-couple">
+      <div class="intel-couple reveal-stagger">
         <div class="intel-couple-col">
           <div class="intel-couple-who">Paul Rose</div>
           <div class="intel-couple-styles">
@@ -2588,7 +2603,7 @@ footer {
       <div class="container" style="padding-left:0;padding-right:0;">
         <div class="cap-num">01</div>
         <h2>A discovery session so good, clients <em>look forward</em> to it.</h2>
-        <p>IMPRINT sends each client a <strong>personalised link</strong> — branded with your studio, addressed to them by name, filtered to their specific room type. No login. No friction. Seven minutes. Done.</p>
+        <p>IMPRINT™ sends each client a <strong>personalised link</strong> — branded with your studio, addressed to them by name, filtered to their specific room type. No login. No friction. Seven minutes. Done.</p>
       </div>
     </div>
     <div class="cap-visual" style="padding:0;">
@@ -2616,7 +2631,7 @@ footer {
       <div class="container" style="padding-left:0;padding-right:0;">
         <div class="cap-num">03</div>
         <h2>The images they discarded tell you more than the ones they chose.</h2>
-        <p>Every instinctive no is a signal. IMPRINT maps what this client will never respond to — the tones, the styles, the aesthetics that will cost you a revision and a relationship if you get them wrong. Knowing what to avoid is half the brief.</p>
+        <p>Every instinctive no is a signal. IMPRINT™ maps what this client will never respond to — the tones, the styles, the aesthetics that will cost you a revision and a relationship if you get them wrong. Knowing what to avoid is half the brief.</p>
       </div>
     </div>
     <div class="cap-visual" style="padding:0;">
@@ -2630,7 +2645,7 @@ footer {
       <div class="container" style="padding-left:0;padding-right:0;">
         <div class="cap-num">04</div>
         <h2>They share a home. They don't share a taste.</h2>
-        <p>Run both partners through discovery separately. IMPRINT shows where their instincts align, where they pull in opposite directions, and the design language that holds both. Walk into that meeting already holding the answer.</p>
+        <p>Run both partners through discovery separately. IMPRINT™ shows where their instincts align, where they pull in opposite directions, and the design language that holds both. Walk into that meeting already holding the answer.</p>
       </div>
     </div>
     <div class="cap-visual" style="padding:0;">
@@ -2651,7 +2666,7 @@ footer {
       <div class="built-card">
         <span class="built-icon">◈</span>
         <h3>Fully Branded</h3>
-        <p>Your logo, your studio name, your accent colour. Every client sees your brand. <em>IMPRINT stays invisible.</em></p>
+        <p>Your logo, your studio name, your accent colour. Every client sees your brand. <em>IMPRINT™ stays invisible.</em></p>
       </div>
       <div class="built-card">
         <span class="built-icon">◎</span>
@@ -2686,9 +2701,9 @@ footer {
 <section class="usecases reveal">
   <div class="container">
     <div class="section-header">
-      <span class="label">Three Ways to Use IMPRINT</span>
+      <span class="label">Three Ways to Use IMPRINT™</span>
       <h2>Use it where the friction lives.</h2>
-      <p>Every touchpoint where clients hesitate, IMPRINT removes the guesswork.</p>
+      <p>Every touchpoint where clients hesitate, IMPRINT™ removes the guesswork.</p>
     </div>
     <div class="usecase-grid reveal-stagger">
       <div class="usecase-card">
@@ -2789,7 +2804,7 @@ footer {
           <source src="https://pub-7413876ac6f0402f9b10c47f94dd0c5c.r2.dev/IMPRINT%20Demo.mp4#t=0.001" type="video/mp4">
         </video>
       </div>
-      <div class="faq-accordion">
+      <div class="faq-accordion reveal-stagger">
         <div class="faq-item">
           <div class="faq-q">What exactly do I get?</div>
           <div class="faq-a">
@@ -2846,11 +2861,11 @@ footer {
 </section>
 
 <!-- SOCIAL PROOF PLACEHOLDER -->
-<section class="social-proof">
+<section class="social-proof reveal">
   <div class="container" style="max-width:680px;">
     <span class="sp-label">Early Access Studios</span>
     <p class="sp-h2">"The brief writes itself."</p>
-    <p class="sp-sub">Studios using IMPRINT are sharing exactly one thing with us: they're not sharing it with anyone else.</p>
+    <p class="sp-sub">Studios using IMPRINT™ are sharing exactly one thing with us: they're not sharing it with anyone else.</p>
   </div>
 </section>
 
@@ -3086,6 +3101,27 @@ async function handleSubmit() {
 document.getElementById('impOverlay').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
+
+/* ─── Parallax: Problem Framing + IMPRINT Connect backgrounds ─── */
+(function () {
+  if (window.innerWidth <= 768) return;
+  var problemSection = document.querySelector('.problem-framing');
+  var connectSection = document.querySelector('.imprint-connect');
+  function applyParallax(el, shift) {
+    if (!el) return;
+    var rect = el.getBoundingClientRect();
+    var wH = window.innerHeight;
+    if (rect.bottom > 0 && rect.top < wH) {
+      var progress = (wH - rect.top) / (wH + rect.height);
+      var y = (progress - 0.5) * shift;
+      el.style.backgroundPositionY = 'calc(center + ' + y + 'px)';
+    }
+  }
+  window.addEventListener('scroll', function () {
+    applyParallax(problemSection, 60);
+    applyParallax(connectSection, 50);
+  }, { passive: true });
+})();
 </script>
 
 <script>
